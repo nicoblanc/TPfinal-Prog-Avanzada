@@ -1,0 +1,1 @@
+http://localhost/TP_Final_P_A/code/index.php/home/tabla
