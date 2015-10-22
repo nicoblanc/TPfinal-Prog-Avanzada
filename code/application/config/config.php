@@ -17,7 +17,7 @@ if (!defined('BASEPATH'))
   | path to your installation.
   |
  */
-$config['base_url'] = 'http://localhost/TP_Final_P_A/code/';
+$config['base_url'] = 'http://localhost/TP_Final_P_A/TPfinal-Prog-Avanzada.git/code/';
 
 /*
   |--------------------------------------------------------------------------
