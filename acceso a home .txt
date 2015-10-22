@@ -1,1 +1,1 @@
-http://localhost/TP_Final_P_A/code/index.php/home/tabla
+http://localhost/TP_Final_P_A/TPfinal-Prog-Avanzada.git/code/index.php/home/tabla
