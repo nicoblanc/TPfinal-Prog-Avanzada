@@ -9,9 +9,15 @@ and open the template in the editor.
 */
 body{
     background-color: #ECF0F1;
-    margin-left: 10px;
-    margin-right: 10px;
+/*    margin-left: 10px;
+    margin-right: 10px;*/
 
+}
+nav.navbar{
+    border-radius: 0px;
+     margin-left: 0px;
+    margin-right: 0px;
+    
 }
 nav ul{
     display: inline;
@@ -33,4 +39,6 @@ th{
 label{
     font-size:18px;
 }
-
+li>i.fa{
+    color: white;
+}

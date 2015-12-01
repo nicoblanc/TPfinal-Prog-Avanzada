@@ -26,8 +26,8 @@
                     <a class="navbar-brand" href="<?php echo base_url('index.php/home/tabla'); ?>">Proyectos</a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li><a href="<?php echo base_url('/index.php/usuario/alta_usuario'); ?>">Nuevo usuario</a></li>
-                    <li><a href="<?php echo base_url('/index.php/item/alta_item'); ?>">Nuevo tipo de items</a></li>
+                    <li><a href="<?php echo base_url('/index.php/usuario/alta_usuario'); ?>"> <i class="fa fa-user"></i> Nuevo usuario</a></li>
+                    <li><a href="<?php echo base_url('/index.php/item/alta_item'); ?>"><i class="fa fa-plus"></i> Nuevo tipo de items</a></li>
                 </ul>
                 <div class="collapse navbar-collapse" id="navbar-collapse-01">
 
