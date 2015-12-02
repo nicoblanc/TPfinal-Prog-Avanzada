@@ -25,10 +25,13 @@ class home extends CI_Controller {
 
         $base = new Base();
         $data['tabla'] = $base->generar_tabla($cabecera, $filas);
+        
+        //Carga la vista de la tabla con el header y el footer.
+        $base->loadView('home/tabla_view', $data);
 
-        $this->load->view('base/head_view', $data);
-        $this->load->view('home/tabla_view', $data);
-        $this->load->view('base/footer_view', $data);
+        //$this->load->view('base/head_view', $data);
+        //$this->load->view('home/tabla_view', $data);
+        //$this->load->view('base/footer_view', $data);
     }
 
     //put your code here
