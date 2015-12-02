@@ -28,6 +28,7 @@ class home extends CI_Controller {
 
         $this->load->view('base/head_view', $data);
         $this->load->view('home/tabla_view', $data);
+        $this->load->view('base/footer_view', $data);
     }
 
     //put your code here

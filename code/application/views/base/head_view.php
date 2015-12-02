@@ -23,7 +23,7 @@
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
                         <span class="sr-only">Toggle navigation</span>
                     </button>
-                    <a class="navbar-brand" href="<?php echo base_url('index.php/home/tabla'); ?>">Proyectos</a>
+                    <a class="navbar-brand" href="<?php echo base_url('index.php/home/tabla'); ?>"><i class="fa fa-pinterest "></i> Proyectos</a>
                 </div>
                 <ul class="nav navbar-nav">
                     <li><a href="<?php echo base_url('/index.php/usuario/alta_usuario'); ?>"> <i class="fa fa-user"></i> Nuevo usuario</a></li>
