@@ -42,7 +42,7 @@ label{
 }
 
 footer{
-    position: absolute;
+    position: fixed;
     bottom: 0px;
     margin-left: 10px;
 }
