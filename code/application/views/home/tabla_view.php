@@ -54,9 +54,27 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12 ">
-            <?php echo $tabla ?>
+            <div id="tabla_home"></div>
         </div>
     </div>
 </div>
+<script type="text/javascript">
+
+        var tabla = new Table();
+        tabla.setViewId('tabla_home');
+
+        var data = {
+                    header: ['id', 'Proyecto', 'Etapa'],
+                    body: [
+                            ['1', 'Facturacion', 'Analisis'],
+                            ['2', 'gestion de serie', 'Desarrollo']
+                          ]
+                    };
+
+        tabla.setData(data);
+        tabla.show();
+
+</script>
+
 </body>
 </html>

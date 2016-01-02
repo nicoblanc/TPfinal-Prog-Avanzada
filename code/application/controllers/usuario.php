@@ -23,18 +23,34 @@ class Usuario extends CI_Controller {
 
     function alta_usuario() {
         $data = array();
-
+        $data['accion'] = 'alta';
         $this->load->view('base/head_view', $data);
         $this->load->view('usuario/formulario_view', $data);
         $this->load->view('base/footer_view', $data);
     }
 
-    function baja_usuario() {
+    function listar_ususario() {
+        $data = array();
 
+        $this->load->view('base/head_view', $data);
+        $this->load->view('usuario/tabla_view', $data);
+        $this->load->view('base/footer_view', $data);
+    }
+
+    function baja_usuario() {
+        $data = array();
+        $data['accion'] = 'baja';
+        $this->load->view('base/head_view', $data);
+        $this->load->view('usuario/formulario_view', $data);
+        $this->load->view('base/footer_view', $data);
     }
 
     function modificar_usuario() {
-
+        $data = array();
+        $data['accion'] = 'modificar';
+        $this->load->view('base/head_view', $data);
+        $this->load->view('usuario/formulario_view', $data);
+        $this->load->view('base/footer_view', $data);
     }
 
     function consulata_usuario() {

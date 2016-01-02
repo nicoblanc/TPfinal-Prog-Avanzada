@@ -11,11 +11,13 @@
     <!--JS-->
     <script  type="text/javascript" src="<?php echo base_url('plugins/jquery/jquery-2.1.1.min.js'); ?>"></script>
     <script  type="text/javascript" src="<?php echo base_url('plugins/bootstrap/js/bootstrap.js'); ?>"></script>
+    <script  type="text/javascript" src="<?php echo base_url('js/table.js'); ?>"></script>
 
     <title>Proyectos de Software</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
 <body>
+    <!--Navbar-->
     <div class="row">
         <div class="col-lg-12">
             <nav class="navbar navbar-inverse navbar-embossed" role="navigation">
@@ -25,11 +27,36 @@
                     </button>
                     <a class="navbar-brand" href="<?php echo base_url('index.php/home/tabla'); ?>"><i class="fa fa-pinterest "></i> Proyectos</a>
                 </div>
-                <ul class="nav navbar-nav">
-                    <li><a href="<?php echo base_url('/index.php/usuario/alta_usuario'); ?>"> <i class="fa fa-user"></i> Nuevo usuario</a></li>
-                    <li><a href="<?php echo base_url('/index.php/item/alta_item'); ?>"><i class="fa fa-plus"></i> Nuevo tipo de items</a></li>
-                </ul>
+
                 <div class="collapse navbar-collapse" id="navbar-collapse-01">
+                    <ul class="nav navbar-nav">
+                        <!--Dropdown-->
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> Usuarios<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<?php echo base_url('/index.php/usuario/listar_ususario'); ?>"><i class="fa fa-list"></i>&nbsp;&nbsp; Lista de Usuarios </a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="<?php echo base_url('/index.php/usuario/alta_usuario'); ?>"><i class="fa fa-plus"></i>&nbsp; &nbsp; Nuevo Usuario</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="<?php echo base_url('/index.php/usuario/modificar_usuario'); ?>"><i class="fa fa-pencil"></i>&nbsp; &nbsp; Modificar Usuario</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="<?php echo base_url('/index.php/usuario/baja_usuario'); ?>"><i class="fa fa-minus"></i>&nbsp; &nbsp; Eliminal Usuario</a></li>
+                                <!--
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">One more separated link</a></li>
+                                -->
+                            </ul>
+                        </li>
+                        <!--/Dropdown-->
+
+                       
+
+                        <li><a href="<?php echo base_url('/index.php/item/alta_item'); ?>"><i class="fa fa-plus"></i> Nuevo tipo de items</a></li>
+                    </ul>
 
                     <form class="navbar-form navbar-right" action="#" role="search">
                         <div class="form-group">
@@ -45,4 +72,4 @@
             </nav>
         </div>
     </div>
-
+   <!--/Navbar-->

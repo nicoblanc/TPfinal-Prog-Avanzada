@@ -1,15 +1,26 @@
+<?php
+$titulo = '';
+switch ($accion) {
+    case 'alta': $titulo = 'Nuevo Usuario';
+        break;
+    case 'baja': $titulo = 'Eliminar Usuario';
+        break;
+    case 'modificar' : $titulo = 'Modificar Usuario';
+        break;
+}
+?>
 
 <article>
     <div class="row titulo-seccion">
         <div class="col-md-12 text-center">
             <header>
-                <h3>Nuevo usuario</h3>
+                <h3><?php echo $titulo ?></h3>
             </header>
         </div>
     </div>
     <div class="container">
         <div class="row">
-            <p>validacion de formularios(corregir)</p>
+            <p></p>
             <form action="<?php echo base_url('/index.php/usuario/guardar_usuario'); ?>" method="post">
                 <div class="row">
                     <div class="col-md-6">

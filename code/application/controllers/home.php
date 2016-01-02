@@ -15,23 +15,14 @@ require_once APPPATH . 'controllers/base.php';
 
 class home extends CI_Controller {
 
-    function tabla() {
-        $cabecera = array('id', 'Proyecto', 'Etapa');
-        $filas = array(
-            'fila1' => array('1', 'Facturacion', 'Analisis'),
-            'fila2' => array('2', 'gestion de serie', 'Desarrollo'),
-            'fila3' => array('3', 'Colegio', 'Desarrollo')
-        );
+    function tabla() {       
 
         $base = new Base();
-        $data['tabla'] = $base->generar_tabla($cabecera, $filas);
-        
+
+        $data['tabla'] = ''; //colocar los elemetos de la tabla, objeto(ver formato en table.js )
         //Carga la vista de la tabla con el header y el footer.
         $base->loadView('home/tabla_view', $data);
 
-        //$this->load->view('base/head_view', $data);
-        //$this->load->view('home/tabla_view', $data);
-        //$this->load->view('base/footer_view', $data);
     }
 
     //put your code here
