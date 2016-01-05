@@ -64,6 +64,8 @@ class Usuario extends CI_Controller {
     public function guardar_usuario() {
         $data = (object) $this->input->post();
 
+        echo $data;
+
         $this->Usuario_Model->guardar($data);
     }
 

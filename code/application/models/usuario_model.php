@@ -21,15 +21,18 @@ class Usuario_Model extends CI_Model {
 
     public function guardar($pUsuario) {
         $data = array(
-            'usuario' => $pUsuario->usuario,
+            'user' => $pUsuario->usuario,
             'password' => md5($pUsuario->password),
-            'apellido' => $pUsuario->apellido,
-            'nombre' => $pUsuario->nombre,
+            'name' => $pUsuario->nombre,
+            'surname' => $pUsuario->apellido,
             'email' => $pUsuario->email,
-            'telefono' => $pUsuario->telefono,
-            'fecha_alta' => date('Y-m-d')
+            'phone' => $pUsuario->telefono,
+            'date' => date('Y-m-d')
         );
-        $this->db->insert('usuario', $data);
+
+        echo $data;
+
+        $this->db->insert('user', $data);
     }
 
 }
