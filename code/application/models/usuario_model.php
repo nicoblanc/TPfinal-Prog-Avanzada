@@ -61,7 +61,7 @@ class Usuario_Model extends CI_Model {
         
        $query = $this->db->get($this->tableDBName);
        foreach($query as $element){
-           $result->body[] =  (Array) $element;
+           $result->body[] = (Array) $element;
        }
        return json_encode($result);
     }
