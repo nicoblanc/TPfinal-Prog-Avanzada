@@ -31,7 +31,6 @@ class Usuario extends CI_Controller {
 
     function listar_ususario() {
         $data = array();
-
         $this->load->view('base/head_view', $data);
         $this->load->view('usuario/tabla_view', $data);
         $this->load->view('base/footer_view', $data);
@@ -62,11 +61,9 @@ class Usuario extends CI_Controller {
     }
 
     public function guardar_usuario() {
-        $data = (object) $this->input->post();
-
-        echo $data;
-
+        $data = (object) $this->input->post();        
         $this->Usuario_Model->guardar($data);
+        $this->listar_ususario();
     }
 
 }

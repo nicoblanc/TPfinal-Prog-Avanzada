@@ -46,3 +46,8 @@ footer{
     bottom: 0px;
     margin-left: 10px;
 }
+
+button a {
+    color: #FFFFFF;
+    background-color: #2ECC71;
+}

@@ -67,7 +67,7 @@ switch ($accion) {
                 <div class="row">
                     <div class="col-md-12">
                         <div class="btn-form">
-                            <a href="<?php // echo base_url('index.php/home/tabla');      ?>"><i class="fa fa-check"></i> <input type="submit" class="btn btn-success form-group">Aceptar</a>
+                            <button type="submit"  class="btn btn-success form-group "><i class="fa fa-check"></i> Aceptar</button>
                             <a id="canselar" href="<?php echo base_url('index.php/home/tabla'); ?>" class="btn btn-danger  form-group "><i class="fa fa-close"></i> Cancelar</a>
                         </div>
                     </div>

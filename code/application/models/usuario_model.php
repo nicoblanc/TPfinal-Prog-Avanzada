@@ -21,7 +21,7 @@ class Usuario_Model extends CI_Model {
 
     public function guardar($pUsuario) {
         $data = array(
-            'user' => $pUsuario->usuario,
+            'username' => $pUsuario->usuario,
             'password' => md5($pUsuario->password),
             'name' => $pUsuario->nombre,
             'surname' => $pUsuario->apellido,
@@ -29,10 +29,12 @@ class Usuario_Model extends CI_Model {
             'phone' => $pUsuario->telefono,
             'date' => date('Y-m-d')
         );
-
-        echo $data;
-
+        
         $this->db->insert('user', $data);
+    }
+
+    public function listar() {
+        $this->db
     }
 
 }
