@@ -14,7 +14,7 @@
 class Usuario_Model extends CI_Model {
 
     private $tableDBName = 'user';
-    private $tableViewHead = array('ID', 'Usuario', 'Tipo');
+    private $tableViewHeaders = array('ID', 'Usuario', 'Tipo');
 
     public function __construc() {
         parent::__construct();
@@ -34,8 +34,8 @@ class Usuario_Model extends CI_Model {
         $this->tableDBName = $tableDBName;
     }
 
-    function set_TableViewHead($tableViewHead) {
-        $this->tableViewHead = $tableViewHead;
+    function set_TableViewHead($tableViewHeaders) {
+        $this->tableViewHead = $tableViewHeaders;
     }
 
     public function guardar($pUsuario) {
@@ -54,8 +54,16 @@ class Usuario_Model extends CI_Model {
     }
 
     public function listar() {
+        //Estructura de retorno para la tablas de la vista. 
+        $result = new stdClass();
+        $result->header   =  $this->$tableViewHeaders;//Array
+        $result->body     =  array();
+        
        $query = $this->db->get($this->tableDBName);
-        var_dump($query->result());
+       foreach($query as $element){
+           $result->body[] =  (Array) $element;
+       }
+       return json_encode($result);
     }
 
 }
