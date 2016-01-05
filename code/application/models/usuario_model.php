@@ -13,10 +13,29 @@
  */
 class Usuario_Model extends CI_Model {
 
+    private $tableDBName = 'user';
+    private $tableViewHead = array('ID', 'Usuario', 'Tipo');
+
     public function __construc() {
         parent::__construct();
 
         $this->load->database();
+    }
+
+    function get_TableDBName() {
+        return $this->tableDBName;
+    }
+
+    function get_TableViewHead() {
+        return $this->tableViewHead;
+    }
+
+    function set_TableDBName($tableDBName) {
+        $this->tableDBName = $tableDBName;
+    }
+
+    function set_TableViewHead($tableViewHead) {
+        $this->tableViewHead = $tableViewHead;
     }
 
     public function guardar($pUsuario) {
@@ -27,14 +46,16 @@ class Usuario_Model extends CI_Model {
             'surname' => $pUsuario->apellido,
             'email' => $pUsuario->email,
             'phone' => $pUsuario->telefono,
-            'date' => date('Y-m-d')
+            'date' => date('Y-m-d'),
+            'profile' => 1//Administrador
         );
         
-        $this->db->insert('user', $data);
+        $this->db->insert($this->tableDBName, $data);
     }
 
     public function listar() {
-        $this->db
+       $query = $this->db->get($this->tableDBName);
+        var_dump($query->result());
     }
 
 }
