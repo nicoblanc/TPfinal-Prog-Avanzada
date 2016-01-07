@@ -66,8 +66,8 @@ class Usuario extends CI_Controller {
         $this->listar_ususario();
     }
     
-    public function ajax_users_to_table_view(){
-         return $this->Usuario_Model->listar();//json
+    public function ajax_users_to_table_view() {
+        echo json_encode($this->Usuario_Model->listar()); //json
     }
 
 }

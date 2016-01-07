@@ -12,6 +12,10 @@
     <script  type="text/javascript" src="<?php echo base_url('plugins/jquery/jquery-2.1.1.min.js'); ?>"></script>
     <script  type="text/javascript" src="<?php echo base_url('plugins/bootstrap/js/bootstrap.js'); ?>"></script>
     <script  type="text/javascript" src="<?php echo base_url('js/table.js'); ?>"></script>
+    <!--js de inicio-->
+    <script>
+        var BASE_URL = "<?php echo base_url(); ?>";
+    </script>
 
     <title>Proyectos de Software</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
