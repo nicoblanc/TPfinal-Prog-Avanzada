@@ -2,6 +2,11 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/E:/xampp/htdocs/TP_Final_P_A/TPfinal-Prog-Avanzada.git/code/js/table.js</file>
+            <file>file:/E:/xampp/htdocs/TP_Final_P_A/TPfinal-Prog-Avanzada.git/code/application/controllers/usuario.php</file>
+            <file>file:/E:/xampp/htdocs/TP_Final_P_A/TPfinal-Prog-Avanzada.git/code/application/models/usuario_model.php</file>
+            <file>file:/E:/xampp/htdocs/TP_Final_P_A/TPfinal-Prog-Avanzada.git/code/application/views/usuario/tabla_view.php</file>
+        </group>
     </open-files>
 </project-private>
