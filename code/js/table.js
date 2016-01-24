@@ -5,34 +5,41 @@
  *By Mauricio Besson
  */
 
-function Table() {
+function Table(){
     var self = this;
-    this.data = {header: [], body: [[], [], []]};    
+    this.data = {header: [], body: [[], [], []]};
     this.viewId = '';//Solo colocar texto ya que el "#" ya esta añadido
     this.border = "solid";
+    this.selectedRowLocalStorageKey = "";
 
     //GETTER y SETTER
-    this.setData = function (data) {
+    this.setData = function(data){
         self.data = data;
     };
 
-    this.getData = function () {
+    this.getData = function(){
         return self.data;
     };
 
-    this.setViewId = function (viewId) {
+    this.setViewId = function(viewId){
         self.viewId = viewId;
     };
 
-    this.getViewId = function () {
+    this.getViewId = function(){
         return self.viewId;
+    };
+    this.setSelectedRowLocalStorageKey = function(selectedRowLocalStorageKey){
+        self.selectedRowLocalStorageKey = selectedRowLocalStorageKey + '-' + self.viewId;
+    };
+    this.getSelectedRowLocalStorageKey = function(){
+        return self.selectedRowLocalStorageKey;
     };
     //Fin GETTER y SETTER
 
 
-  
+
     //Genera la tabla con datos cargados
-    this.genetateHtml = function () {
+    this.genetateHtml = function(){
         var html = '';
 
         html += '<table class="table table-bordered table-hover">';
@@ -55,7 +62,7 @@ function Table() {
             var lengthBody = self.data.body.length;
 
             for (var x = 0; x < lengthBody; x++) {
-                html += '<tr>';
+                html += '<tr data-index="' + self.data.body[x][0] + '">';
                 for (var j = 0; j < self.data.body[x].length; j++) {
                     html += '   <td>';
                     html += self.data.body[x][j];
@@ -71,12 +78,54 @@ function Table() {
         return html;
     };
 
-    this.show = function () {       
+    this.show = function(){
         $('#' + self.viewId).append(self.genetateHtml());
     };
 
-    this.refresh = function () {
+    this.refresh = function(){
         $('#' + self.viewId).append(self.genetateHtml());
+    };
+
+
+    this.storageSelectedRow = function(value){
+        var key = self.getSelectedRowLocalStorageKey();
+
+        if (typeof (Storage) != "undefined")
+        {
+            localStorage.setItem(key, value);
+        }
+    };
+
+    this.clearStorageSelectedRow = function(){ 
+        var key = self.getSelectedRowLocalStorageKey();
+
+        if (typeof (Storage) != "undefined")
+        {
+            localStorage.setItem(key, "");
+        }
+    };
+
+    this.saveSelectedRow = function(){
+        $('#' + self.viewId + ' table tr').on('click', function(){          
+            self.storageSelectedRow($(this).attr('data-index'));
+            self.getSelectedRow();
+        });
+    };
+
+    this.getSelectedRow = function(){
+        if (typeof (Storage) != "undefined")
+        {
+            return localStorage.getItem(self.getSelectedRowLocalStorageKey());
+        }
+    };
+
+
+    //Metodo principal
+    this.init = function(){
+        self.setSelectedRowLocalStorageKey("SelectedRow");
+        self.clearStorageSelectedRow();
+        self.show();
+        self.saveSelectedRow();
     };
 
 };

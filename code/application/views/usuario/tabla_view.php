@@ -14,25 +14,15 @@
 
     var tablaUsuarios = new Table();
     tablaUsuarios.setViewId('tabla_usuarios');
-
-//    var data = {
-//        header: ['id', 'Usuario', 'Tipo'],
-//        body: [
-//            ['1', 'Mauricio', 'Administrador'],
-//            ['2', 'Nicolas', 'Administrador']
-//        ]
-//    };
-
  var data ="";
     $.ajax({
         url:BASE_URL + "index.php/usuario/ajax_users_to_table_view",
         dataType:'json',
         method: 'POST',
     }).done(function(pData){
-        data = pData;
-        console.log(data);
-    tablaUsuarios.setData(data);
-    tablaUsuarios.show();
+        data = pData;       
+    tablaUsuarios.setData(data); 
+    tablaUsuarios.init();
     });
 
    

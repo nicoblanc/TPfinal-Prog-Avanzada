@@ -15,7 +15,7 @@
 class Usuario_Model extends CI_Model {
 
     private $tableDBName = 'user';
-    private $tableViewHeaders = array('ID', 'Usuario', 'Tipo', '', '', '', '', '', '');
+    private $tableViewHeaders = array('ID', 'Fecha de alta ', 'Usuario', 'md5 pass(quitar)', 'id Perfil(Usar tabla relacion)', 'Activo', 'Nombre ', 'Apellido', 'E-mail', 'telefono');
 
     public function __construc() {
         parent::__construct();
@@ -48,7 +48,8 @@ class Usuario_Model extends CI_Model {
             'email' => $pUsuario->email,
             'phone' => $pUsuario->telefono,
             'date' => date('Y-m-d'),
-            'profile' => 1//Administrador
+            'profile' => 1, //Administrador
+            'status' => true//status
         );
         
         $this->db->insert($this->tableDBName, $data);
