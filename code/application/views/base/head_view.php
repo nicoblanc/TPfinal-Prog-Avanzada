@@ -34,7 +34,7 @@
 
                 <div class="collapse navbar-collapse" id="navbar-collapse-01">
                     <ul class="nav navbar-nav">
-                        <!--Dropdown-->
+                        <!--Dropdown de USsuarios-->
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> Usuarios<span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -42,7 +42,7 @@
                                 <li role="separator" class="divider"></li>
                                 <li><a href="<?php echo base_url('/index.php/usuario/alta_usuario'); ?>"><i class="fa fa-plus"></i>&nbsp; &nbsp; Nuevo Usuario</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="<?php echo base_url('/index.php/usuario/modificar_usuario'); ?>"><i class="fa fa-pencil"></i>&nbsp; &nbsp; Modificar Usuario</a></li>
+                                <li id="item_modificar_usuario"><a href="<?php echo base_url('/index.php/usuario/modificar_usuario'); ?>"><i class="fa fa-pencil"></i>&nbsp; &nbsp; Modificar Usuario</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="<?php echo base_url('/index.php/usuario/baja_usuario'); ?>"><i class="fa fa-minus"></i>&nbsp; &nbsp; Eliminal Usuario</a></li>
                                 <!--

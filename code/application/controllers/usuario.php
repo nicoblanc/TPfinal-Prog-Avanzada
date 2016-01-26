@@ -44,9 +44,12 @@ class Usuario extends CI_Controller {
         $this->load->view('base/footer_view', $data);
     }
 
-    function modificar_usuario() {
+    function modificar_usuario($id) {
         $data = array();
         $data['accion'] = 'modificar';
+
+        $data['usuario'] = $this->Usuario_Model->get_by_id($id);
+
         $this->load->view('base/head_view', $data);
         $this->load->view('usuario/formulario_view', $data);
         $this->load->view('base/footer_view', $data);

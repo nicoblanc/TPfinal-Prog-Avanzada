@@ -55,6 +55,22 @@ class Usuario_Model extends CI_Model {
         $this->db->insert($this->tableDBName, $data);
     }
 
+    public function modificar($pUsuario) {
+        $data = array(
+            'username' => $pUsuario->usuario,
+            'password' => md5($pUsuario->password),
+            'name' => $pUsuario->nombre,
+            'surname' => $pUsuario->apellido,
+            'email' => $pUsuario->email,
+            'phone' => $pUsuario->telefono,
+            'date' => date('Y-m-d'),
+            'profile' => 1, //Administrador
+            'status' => true//status
+        );
+
+        $this->db->update($this->tableDBName, $data);
+    }
+
     public function listar() {
         //Estructura de retorno para la tablas de la vista. 
         $result = new stdClass();
@@ -69,6 +85,11 @@ class Usuario_Model extends CI_Model {
         }
        
        return $result;
+    }
+
+    public function get_by_id($id) {
+        $query = $this->db->get_where($this->tableDBName, array('ID' => $id));
+        return $query->row();
     }
 
 }

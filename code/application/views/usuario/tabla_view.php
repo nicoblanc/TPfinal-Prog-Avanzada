@@ -14,19 +14,27 @@
 
     var tablaUsuarios = new Table();
     tablaUsuarios.setViewId('tabla_usuarios');
- var data ="";
+    var data = "";
     $.ajax({
-        url:BASE_URL + "index.php/usuario/ajax_users_to_table_view",
-        dataType:'json',
+        url: BASE_URL + "index.php/usuario/ajax_users_to_table_view",
+        dataType: 'json',
         method: 'POST',
     }).done(function(pData){
-        data = pData;       
-    tablaUsuarios.setData(data); 
-    tablaUsuarios.init();
+        data = pData;
+        tablaUsuarios.setData(data);
+        tablaUsuarios.init();
     });
 
-   
 
+//Modificar usuario.
+    $('#item_modificar_usuario').on('click', function(event){
+        event.preventDefault();
+        if (tablaUsuarios.getSelectedRow() != '') {
+            location.href = '<?php echo base_url('/index.php/usuario/modificar_usuario'); ?>' + '/' + tablaUsuarios.getSelectedRow();
+        } else {
+            alert('Seleccione un elemento de la tabla');
+        }
+    });
 
 </script>
 

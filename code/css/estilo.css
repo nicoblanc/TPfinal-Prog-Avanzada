@@ -51,3 +51,7 @@ button a {
     color: #FFFFFF;
     background-color: #2ECC71;
 }
+
+.table-row-selected{
+    background-color: white;
+}

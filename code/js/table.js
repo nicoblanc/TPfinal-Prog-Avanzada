@@ -109,6 +109,8 @@ function Table(){
         $('#' + self.viewId + ' table tr').on('click', function(){          
             self.storageSelectedRow($(this).attr('data-index'));
             self.getSelectedRow();
+            $('#' + self.viewId + ' table tr.table-row-selected').removeClass('table-row-selected');
+            $(this).addClass('table-row-selected');
         });
     };
 

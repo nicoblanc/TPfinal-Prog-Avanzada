@@ -26,13 +26,13 @@ switch ($accion) {
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="usuario">Usuario</label>
-                            <input id="usuario" type="text" name="usuario" class="form-control"/>
+                            <input id="usuario" type="text" name="usuario" class="form-control" value="<?php echo (isset($usuario) ? $usuario->username : '') ?>"/>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="password">Contraseña</label>
-                            <input id="password" type="password" name="password" class="form-control"/>
+                            <input id="password" type="password" name="password" class="form-control" value="<?php echo (isset($usuario) ? $usuario->password : '') ?>"/>
                         </div>
                     </div>
                 </div>
@@ -40,13 +40,13 @@ switch ($accion) {
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="nombre">Nombre</label>
-                            <input id="nombre" type="text" name="nombre" class="form-control"/>
+                            <input id="nombre" type="text" name="nombre" class="form-control" value="<?php echo (isset($usuario) ? $usuario->name : '') ?>"/>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="apellido">Apellido</label>
-                            <input  id="apellido" type="text" name="apellido" class="form-control" />
+                            <input  id="apellido" type="text" name="apellido" class="form-control" value="<?php echo (isset($usuario) ? $usuario->surname : '') ?>"/>
                         </div>
                     </div>
                 </div>
@@ -54,13 +54,13 @@ switch ($accion) {
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="telefono">Email</label>
-                            <input id="telefono" type="email" name="email" class="form-control"/>
+                            <input id="telefono" type="email" name="email" class="form-control" value="<?php echo (isset($usuario) ? $usuario->email : '') ?>"/>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="email">Teléfono</label>
-                            <input id="email" type="tel" name="telefono" class="form-control"/>
+                            <input id="email" type="tel" name="telefono" class="form-control" value="<?php echo (isset($usuario) ? $usuario->phone : '') ?>"/>
                         </div>
                     </div>
                 </div>
