@@ -51,7 +51,8 @@ class Base extends CI_Controller {
         $this->load->view();
     }
     
-    public function loadView($url = 'home/tabla_view', $data) {
+    public function loadView($url = 'home/tabla_view', $data)
+    {
         $ci = &get_instance();
         $ci->load->view('base/head_view', $data);
         $ci->load->view($url, $data);

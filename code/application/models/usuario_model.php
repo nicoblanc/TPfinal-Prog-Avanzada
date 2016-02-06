@@ -55,10 +55,10 @@ class Usuario_Model extends CI_Model {
         $this->db->insert($this->tableDBName, $data);
     }
 
-    public function modificar($pUsuario) {
+    public function modificar($pUsuario)
+    {
         $data = array(
             'username' => $pUsuario->usuario,
-            'password' => md5($pUsuario->password),
             'name' => $pUsuario->nombre,
             'surname' => $pUsuario->apellido,
             'email' => $pUsuario->email,
@@ -68,6 +68,11 @@ class Usuario_Model extends CI_Model {
             'status' => true//status
         );
 
+        // Modificar password si esta checkeado, se actualiza el password.
+        if (isset($pUsuario->change_password))
+            $data['password'] = md5($pUsuario->password);
+
+        $this->db->where('ID', $pUsuario->ID);
         $this->db->update($this->tableDBName, $data);
     }
 

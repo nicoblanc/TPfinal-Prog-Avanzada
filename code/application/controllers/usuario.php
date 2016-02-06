@@ -63,13 +63,23 @@ class Usuario extends CI_Controller {
 
     }
 
-    public function guardar_usuario() {
-        $data = (object) $this->input->post();        
-        $this->Usuario_Model->guardar($data);
+    public function guardar_usuario()
+    {
+        $data = (object) $this->input->post();
+
+        if ($data->action == 'modificar')
+        {
+
+            $this->Usuario_Model->modificar($data);
+        }
+        else
+            $this->Usuario_Model->guardar($data);
+
         $this->listar_ususario();
     }
     
-    public function ajax_users_to_table_view() {
+    public function ajax_users_to_table_view()
+    {
         echo json_encode($this->Usuario_Model->listar()); //json
     }
 
