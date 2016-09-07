@@ -5,8 +5,9 @@
     <link rel="stylesheet" href="<?php echo base_url('plugins/bootstrap/css/bootstrap.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('plugins/Flat-UI/css/flat-ui.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('plugins/font-awesome/css/font-awesome.css'); ?>">
-    <link rel="stylesheet" href="<?php echo base_url('css/estilo.css'); ?>">
 
+    <link rel="stylesheet" href="<?php echo base_url('css/estilo.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('css/estilo_sass.css'); ?>">
 
     <!--JS-->
     <script  type="text/javascript" src="<?php echo base_url('plugins/jquery/jquery-2.1.1.min.js'); ?>"></script>
