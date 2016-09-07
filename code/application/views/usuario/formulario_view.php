@@ -36,7 +36,14 @@ switch ($accion)
                         <div class="form-group">
                             <label for="password">Contraseña</label>
                             <input id="password" type="password" name="password" class="form-control" value="<?php echo (isset($usuario) ? $usuario->password : '') ?>"  <?php echo (isset($usuario) ? 'disabled' : '') ?>/>
-                            <input id="change_password" type="checkbox" name="change_password" class="form-control">
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <label style="font-size: 13px;" for="password">Modificar</label>
+                                </div>
+                                <div class="col-offset-sm-2">
+                                    <input id="change_password" type="checkbox" name="change_password" class="form-control">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
