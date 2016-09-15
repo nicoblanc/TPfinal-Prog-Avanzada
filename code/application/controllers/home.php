@@ -15,7 +15,7 @@ require_once APPPATH . 'controllers/base.php';
 
 class home extends CI_Controller {
 
-    function tabla() {       
+    function tabla() {  
 
         $base = new Base();
 
