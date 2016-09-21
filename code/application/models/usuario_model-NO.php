@@ -12,7 +12,9 @@
  *
  * @author Mauricio
  */
-class Usuario_Model extends CI_Model {
+//require_once '/models/base_model.php'
+
+class Usuario_Model extends Base_Model {
 
     private $tableDBName = 'user';
     private $tableViewHeaders = array('ID', 'Fecha de alta ', 'Usuario', 'md5 pass(quitar)', 'id Perfil(Usar tabla relacion)', 'Activo', 'Nombre ', 'Apellido', 'E-mail', 'telefono');
