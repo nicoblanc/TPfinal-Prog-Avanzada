@@ -36,7 +36,7 @@
                 <div class="collapse navbar-collapse" id="navbar-collapse-01">
                     <ul class="nav navbar-nav">
                         <!--Dropdown de USsuarios-->
-                        <li class="dropdown">
+                        <!--<li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> Usuarios<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="<?php echo base_url('/index.php/usuario/listar_ususario'); ?>"><i class="fa fa-list"></i>&nbsp;&nbsp; Lista de Usuarios </a></li>
@@ -55,10 +55,11 @@
                                 <li><a href="#">One more separated link</a></li>
                                 -->
                             </ul>
-                        </li>
+                        </li>-->
                         <!--/Dropdown-->
 
-                       
+
+                        <li><a href="<?php echo base_url('/index.php/user/show_crud_view'); ?>"><i class="fa fa-plus"></i> Usuarios</a></li>
 
                         <li><a href="<?php echo base_url('/index.php/item/alta_item'); ?>"><i class="fa fa-plus"></i> Nuevo tipo de items</a></li>
                     </ul>
