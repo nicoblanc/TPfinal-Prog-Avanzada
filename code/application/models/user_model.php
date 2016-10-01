@@ -14,7 +14,7 @@ class User_Model extends Base_Model
     private $change_columns_name = [
         'date'=>'Fecha'
     ];
-*/
+    */
     function __construct()
     {
         parent::__construct();

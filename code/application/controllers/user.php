@@ -27,7 +27,10 @@ class User extends CI_Controller
         $this->User_Model->set_change_columns_name();
 
         $output = $this->User_Model->crud();
+
+        $this->load->view('base/head_view', $output);
         $this->render_view($output);
+        //$this->load->view('base/footer_view', $output);
 
     }
 }

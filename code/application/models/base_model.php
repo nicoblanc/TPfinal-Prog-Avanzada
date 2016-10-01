@@ -79,6 +79,7 @@ class Base_Model extends CI_Model
         $this->grocery_crud->set_table($this->db_table_name);
         $this->grocery_crud->unset_columns($this->unset_columns_view);
         $this->grocery_crud->display_as($this->change_columns_name);
+        $this->grocery_crud->set_theme('datatables');
 
         $output = $this->grocery_crud->render();
 

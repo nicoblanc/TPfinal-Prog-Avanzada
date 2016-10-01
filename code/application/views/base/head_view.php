@@ -1,6 +1,12 @@
 
 <!DOCTYPE html lang="es">
 <head>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
     <!--CSS-->
     <link rel="stylesheet" href="<?php echo base_url('plugins/bootstrap/css/bootstrap.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('plugins/Flat-UI/css/flat-ui.css'); ?>">
@@ -17,6 +23,19 @@
     <script>
         var BASE_URL = "<?php echo base_url(); ?>";
     </script>
+
+
+    <!--Grocery Crud-->
+    <?php
+    if (isset($css_files) and isset($js_files))
+    {
+    foreach($css_files as $file): ?>
+    <link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
+    <?php endforeach; ?>
+    <?php foreach($js_files as $file): ?>
+        <script src="<?php echo $file; ?>"></script>
+    <?php endforeach;
+    }?>
 
     <title>Proyectos de Software</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -46,14 +65,7 @@
                                 <li id="item_modificar_usuario"><a href="<?php echo base_url('/index.php/usuario/modificar_usuario'); ?>"><i class="fa fa-pencil"></i>&nbsp; &nbsp; Modificar Usuario</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="<?php echo base_url('/index.php/usuario/baja_usuario'); ?>"><i class="fa fa-minus"></i>&nbsp; &nbsp; Eliminal Usuario</a></li>
-                                <!--
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="#">One more separated link</a></li>
-                                -->
+
                             </ul>
                         </li>-->
                         <!--/Dropdown-->
@@ -64,6 +76,7 @@
                         <li><a href="<?php echo base_url('/index.php/item/alta_item'); ?>"><i class="fa fa-plus"></i> Nuevo tipo de items</a></li>
                     </ul>
 
+                    <!--
                     <form class="navbar-form navbar-right" action="#" role="search">
                         <div class="form-group">
                             <div class="input-group">
@@ -74,6 +87,7 @@
                             </div>
                         </div>
                     </form>
+                    -->
                 </div>
             </nav>
         </div>
