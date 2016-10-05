@@ -23,10 +23,12 @@ class User extends CI_Controller
     public function show_crud_view()
     {
         $this->User_Model->set_db_table_name('user');
-        $this->User_Model->set_unset_columns_view();
-        $this->User_Model->set_change_columns_name();
+        $this->User_Model->set_unset_columns_view(['password']);
+        $this->User_Model->set_change_columns_name(
+            ['usercode'=>'Usuario']);
 
         $output = $this->User_Model->crud();
+        //var_dump($output);
 
         $this->load->view('base/head_view', $output);
         $this->render_view($output);
