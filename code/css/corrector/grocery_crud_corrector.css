@@ -1,0 +1,35 @@
+/*HTML elements */
+label, input, table {
+  font-size: 15px; }
+
+#Crud-Wrapper {
+  max-width: 99%; }
+
+.dataTablesContainer {
+  max-width: 99%;
+  margin-left: 1%;
+  font-size: 8px; }
+
+#list-report-success {
+  max-width: 99%; }
+
+.dataTables_filter {
+  height: 10px; }
+
+.DTTT_container {
+  font-size: 15px; }
+
+/*table footer */
+.ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled {
+  opacity: 10; }
+
+/*table view head */
+.dataTables_length > label > select {
+  height: 25px;
+  font-size: 15px; }
+
+.dataTables_filter > label > input {
+  height: 25px;
+  font-size: 15px; }
+
+/*# sourceMappingURL=grocery_crud_corrector.css.map */

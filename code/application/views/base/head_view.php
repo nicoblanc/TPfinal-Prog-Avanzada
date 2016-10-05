@@ -1,11 +1,7 @@
 
 <!DOCTYPE html lang="es">
 <head>
-
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
 
     <!--CSS-->
     <link rel="stylesheet" href="<?php echo base_url('plugins/bootstrap/css/bootstrap.css'); ?>">
@@ -36,6 +32,10 @@
         <script src="<?php echo $file; ?>"></script>
     <?php endforeach;
     }?>
+
+    <!-- Corrector -->
+    <link rel="stylesheet" href="<?php echo base_url('css/corrector/grocery_crud_corrector.css'  ); ?>">
+
 
     <title>Proyectos de Software</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">

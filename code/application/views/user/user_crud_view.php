@@ -29,7 +29,7 @@
 <!--</head>
 <body>-->
 
-<div style='height:20px;'></div>
+<div id="Crud-Wrapper" ></div>
 <div>
     <?php echo $output; ?>
 </div>
