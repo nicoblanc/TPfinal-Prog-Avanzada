@@ -17,7 +17,8 @@ class Verificar_model extends CI_Model {
 		}
 		else
 		{
-			redirect(base_url().'index.php/verificar');
+			//redirect(base_url().'index.php/verificar');
+            return null;
 		}
 	}
 }

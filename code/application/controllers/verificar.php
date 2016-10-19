@@ -1,4 +1,7 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed'); 
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+require_once APPPATH . 'controllers/base.php';
+
 class Verificar extends CI_Controller { 	
 
     function __construct() 	{ 		
@@ -9,8 +12,11 @@ class Verificar extends CI_Controller {
 
 	function index()
 	{
-		$data['title'] = 'Formulario de login';
-		$this->load->view('verificar_view', $data);
+		//$data['title'] = 'Formulario de login';
+		//$this->load->view('verificar_view', $data);
+
+        $base = new Base();
+        $base->loadView('verificar_view', null);
 	}
 
 	function nueva_sesion()
@@ -27,12 +33,16 @@ class Verificar extends CI_Controller {
         else
         {
 	       $nom = $this->input->post('nom');
+
 	       $pass = $this->input->post('pass');
     	   //comprobamos si existen en la base de datos enviando los datos al modelo
     	   $login = $this->verificar_model->verificar($nom, $pass);
             if ($login)
             {
                  redirect(base_url().'index.php/home/tabla');
+            }else{
+                $base = new Base();
+                $base->loadView('verificar_view', null);
             }
         }
     }
