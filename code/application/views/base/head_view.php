@@ -74,6 +74,9 @@
                         <li><a href="<?php echo base_url('/index.php/user/show_crud_view'); ?>"><i class="fa fa-plus"></i> Usuarios</a></li>
 
                         <li><a href="<?php echo base_url('/index.php/client/show_crud_view'); ?>"><i class="fa fa-plus"></i> Cliente</a></li>
+
+                        <li><a href="<?php echo base_url('/index.php/verificar'); ?>"><i class="fa fa-user"></i> Login</a></li>
+
                     </ul>
 
                     <!--
