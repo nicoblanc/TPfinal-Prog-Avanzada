@@ -32,7 +32,7 @@ class Verificar extends CI_Controller {
     	   $login = $this->verificar_model->verificar($nom, $pass);
             if ($login)
             {
-                 redirect(base_url().'index.php/logueado');
+                 redirect(base_url().'index.php/home/tabla');
             }
         }
     }

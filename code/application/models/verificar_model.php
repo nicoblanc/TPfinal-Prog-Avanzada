@@ -6,23 +6,13 @@ class Verificar_model extends CI_Model {
 	}
 
 	function verificar($nom,$pass){
-		
-		var_dump( md5($pass));
-		/*
-		$this->db->where('username', $nom);
-		$this->db->where('password', md5($pass));
-		$query = $this->db->get('user');
-		*/
 
-       $query = $this->db->get_where('user', array('username' => $nom, 'password'=> md5($pass)));
-
-
-		var_dump($query);die();
+       $query = $this->db->get_where('user', array('usercode' => $nom, 'password'=> $pass));
 
 		if ($query->num_rows()==1)
 		{
-			echo "entro";die();
-			return $query->result();
+			var_dump($query->result());
+		    return $query->result();
 
 		}
 		else
