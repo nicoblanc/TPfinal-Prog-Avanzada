@@ -1,6 +1,4 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-Login de usuarios con el framework codeIgniter
-
 
 <!--mostramos los errores del formulario, si los hay-->
 <?php echo validation_errors(); ?>
@@ -21,5 +19,5 @@ Login de usuarios con el framework codeIgniter
 </tr>
 </tbody>
 </table>
-<pre>
+
 <!--?php echo form_close() ?-->
