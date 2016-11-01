@@ -22,7 +22,7 @@
                             </label>
                         </div>
                         -->
-                    <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+                    <input class="btn btn-lg btn-primary btn-block" type="submit" value="Ingresar"/>
                 <?php echo form_close(); ?>
         </div>
     </div>
