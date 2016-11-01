@@ -28,7 +28,7 @@ class User extends CI_Controller
             ['usercode'=>'Usuario']);
 
         $output = $this->User_Model->crud();
-        //var_dump($output);
+
 
         $this->load->view('base/head_view', $output);
         $this->render_view($output);

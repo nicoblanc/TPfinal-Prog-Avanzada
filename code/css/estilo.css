@@ -55,3 +55,8 @@ button a {
 .table-row-selected{
     background-color: white;
 }
+
+.login-form-row-container{
+    /*max-width: 80%;*/
+}
+
