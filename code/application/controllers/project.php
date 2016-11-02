@@ -1,30 +1,31 @@
 <?php
 
+
 require_once APPPATH . 'controllers/base.php';
 
-class Item extends CI_Controller
+class Project extends CI_Controller
 {
     public function __construct() {
         parent::__construct();
 
-        $this->load->model('item_model', 'Item_Model');
+        $this->load->model('project_model', 'Project_Model');
     }
 
     public function render_view($pOutput = null)
     {
-        $this->load->view('item/item_crud_view.php',$pOutput);
+        $this->load->view('project/project_crud_view.php',$pOutput);
     }
 
     public function show_crud_view()
     {
-        $this->Item_Model->set_db_table_name('item');
+        $this->Project_Model->set_db_table_name('project');
         //$this->User_Model->set_unset_columns_view(['password']);
         /*
          *$this->User_Model->set_change_columns_name(
             ['usercode'=>'Usuario']);
         */
 
-        $output = $this->Item_Model->crud();
+        $output = $this->Project_Model->crud();
 
 
         $this->load->view('base/head_view', $output);
