@@ -1,12 +1,7 @@
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-
 <div class="container">
     <div class="row">
-        <div class="col-md-4 >
-                <?php echo validation_errors(); ?>
-                <?php echo form_open(base_url().'index.php/verificar/nueva_sesion');?>
-                        <h5 class="form-signin-heading">Ingresar</h5>
+        <div class="col-md-4">
+               <?php echo form_open(base_url().'index.php/verificar/nueva_sesion'); ?>
                         <div class="form-group">
                             <label for="inputNom" class="sr-only">Usuario</label>
                             <input name="nom" type="text" id="nom" class="form-control" placeholder="Usuario" required="" autofocus="">
@@ -15,14 +10,7 @@
                             <label for="password" class="sr-only">Contraseña</label>
                             <input name="password" type="password" id="password" class="form-control" placeholder="Contraseña" required="">
                         </div>
-                        <!--
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" value="remember-me"> Recordar
-                            </label>
-                        </div>
-                        -->
-                    <input class="btn btn-lg btn-primary btn-block" type="submit" value="Ingresar"/>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
                 <?php echo form_close(); ?>
         </div>
     </div>

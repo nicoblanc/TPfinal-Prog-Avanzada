@@ -21,12 +21,12 @@ class Verificar extends CI_Controller {
 
 	function nueva_sesion()
     {
-        var_dump('==============================NUEVA SESION==========================================');
+        //var_dump('==============================NUEVA SESION==========================================');
 
         $this->form_validation->set_rules('nom', 'nombre', 'trim|required|xss_clean');
         $this->form_validation->set_rules('password', 'password', 'trim|required|xss_clean');
 
-       $this->form_validation->set_message('required', 'El %s es requerido');
+        $this->form_validation->set_message('required', 'El %s es requerido');
 
         if ($this->form_validation->run() == FALSE)
         {
