@@ -4,9 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/code/assets" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e581499f-9da8-4864-a278-f02909de8b72" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/code/application/controllers/.php" afterPath="" />
-    </list>
+    <list default="true" id="e581499f-9da8-4864-a278-f02909de8b72" name="Default" comment="" />
     <ignored path="TPfinal-Prog-Avanzada.git.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -402,15 +400,15 @@
       <workItem from="1476844528116" duration="1790000" />
       <workItem from="1477224283679" duration="687000" />
       <workItem from="1477954678092" duration="10897000" />
-      <workItem from="1478043069937" duration="3762000" />
+      <workItem from="1478043069937" duration="3935000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43226000" />
+    <option name="totallyTimeSpent" value="43399000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1370" height="744" extended-state="0" />
+    <frame x="-8" y="-8" width="1370" height="744" extended-state="1" />
     <editor active="false" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23435114" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
