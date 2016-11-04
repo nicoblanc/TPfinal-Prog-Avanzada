@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e581499f-9da8-4864-a278-f02909de8b72" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/application/views/verificar_view.php" afterPath="$PROJECT_DIR$/code/application/views/verificar_view.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/application/config/config.php" afterPath="$PROJECT_DIR$/code/application/config/config.php" />
     </list>
     <ignored path="TPfinal-Prog-Avanzada.git.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,31 +26,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="verificar_view.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/code/application/views/verificar_view.php">
+      <file leaf-file-name="project.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/code/application/controllers/project.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="42">
+              <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="autoload.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/application/config/autoload.php">
+      <file leaf-file-name="item.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/application/controllers/item.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-901">
-              <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="verificar.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/code/application/controllers/verificar.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
+            <state relative-caret-position="-126">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -94,13 +84,13 @@
         <option value="$PROJECT_DIR$/code/application/controllers/.php" />
         <option value="$PROJECT_DIR$/code/application/controllers/client.php" />
         <option value="$PROJECT_DIR$/code/application/models/client_model.php" />
-        <option value="$PROJECT_DIR$/code/application/config/config.php" />
         <option value="$PROJECT_DIR$/code/application/views/base/head_view.php" />
         <option value="$PROJECT_DIR$/code/application/controllers/user.php" />
         <option value="$PROJECT_DIR$/code/css/estilo_sass.css.map" />
         <option value="$PROJECT_DIR$/code/css/estilo.css" />
         <option value="$PROJECT_DIR$/code/application/controllers/verificar.php" />
         <option value="$PROJECT_DIR$/code/application/views/verificar_view.php" />
+        <option value="$PROJECT_DIR$/code/application/config/config.php" />
       </list>
     </option>
   </component>
@@ -303,7 +293,51 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="libraries" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TPfinal-Prog-Avanzada.git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TPfinal-Prog-Avanzada.git" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TPfinal-Prog-Avanzada.git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TPfinal-Prog-Avanzada.git" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -402,16 +436,16 @@
       <workItem from="1476844528116" duration="1790000" />
       <workItem from="1477224283679" duration="687000" />
       <workItem from="1477954678092" duration="10897000" />
-      <workItem from="1478043069937" duration="4239000" />
+      <workItem from="1478043069937" duration="6208000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43703000" />
+    <option name="totallyTimeSpent" value="45672000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2322239" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -469,33 +503,11 @@
           <url>file://$PROJECT_DIR$/code/application/controllers/home.php</url>
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/code/application/models/OLD/usuario_model-NO.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="72" column="57" selection-start-line="72" selection-start-column="57" selection-end-line="72" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/application/controllers/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/application/views/OLD/usuario/formulario_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="80" column="100" selection-start-line="80" selection-start-column="100" selection-end-line="80" selection-end-column="100" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/code/application/controllers/usuario-NO.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -783,14 +795,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/application/config/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2436">
-          <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/code/application/config/constants.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-441">
@@ -823,14 +827,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/application/config/autoload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-901">
-          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/code/application/controllers/verificar.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="429">
@@ -843,6 +839,60 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/application/config/autoload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/application/config/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/application/libraries/Grocery_CRUD.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="3071" column="0" selection-start-line="3071" selection-start-column="0" selection-end-line="3072" selection-end-column="0" />
+          <folding>
+            <marker date="1473909815542" expanded="true" signature="49796:50273" ph="..." />
+            <marker date="1473909815542" expanded="true" signature="65817:65976" ph="..." />
+            <marker date="1473909815542" expanded="true" signature="65824:65969" ph="..." />
+            <marker date="1473909815542" expanded="true" signature="66281:66442" ph="..." />
+            <marker date="1473909815542" expanded="true" signature="66288:66435" ph="..." />
+            <marker date="1473909815542" expanded="true" signature="75562:75574" ph="..." />
+            <marker date="1473909815542" expanded="true" signature="76437:76449" ph="..." />
+            <marker date="1473909815542" expanded="true" signature="77804:77815" ph="..." />
+            <marker date="1473909815542" expanded="true" signature="85431:85449" ph="..." />
+            <marker date="1473909815542" expanded="true" signature="85817:85827" ph="..." />
+            <marker date="1473909815542" expanded="true" signature="85884:85896" ph="..." />
+            <marker date="1473909815542" expanded="true" signature="86055:86067" ph="..." />
+            <marker date="1473909815542" expanded="true" signature="86177:86189" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/application/controllers/item.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-126">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/application/controllers/project.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
           <folding />
         </state>
       </provider>
