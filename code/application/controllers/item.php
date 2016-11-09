@@ -27,7 +27,6 @@ class Item extends CI_Controller
 
         $output = $this->Item_Model->crud();
 
-
         $this->load->view('base/head_view', $output);
         $this->render_view($output);
         $this->load->view('base/footer_view', $output);

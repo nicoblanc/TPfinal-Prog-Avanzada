@@ -1,6 +1,5 @@
 <?php
 
-
 require_once APPPATH . 'controllers/base.php';
 
 
@@ -10,6 +9,10 @@ class Project extends CI_Controller
         parent::__construct();
 
         $this->load->model('project_model', 'Project_Model');
+
+        var_dump($this->Project_Model->listProject());
+        die();
+
     }
 
     public function render_view($pOutput = null)

@@ -48,7 +48,7 @@ create table project (
 
 projectcode varchar (20) not null,
 clientcode varchar (20) not null,
-description varchar (20) not null,
+description varchar (200) not null,
 
 foreign key (clientcode)
 references client (clientcode),

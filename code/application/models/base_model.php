@@ -11,12 +11,10 @@
 
 class Base_Model extends CI_Model 
 {
-
 	private $db_table_name = '';
 	private $db_primary_key = '';
     private $unset_columns_view = array();
     private $change_columns_name = array(); //array de clave => valor
-
 
 	public function __construct()
 	{

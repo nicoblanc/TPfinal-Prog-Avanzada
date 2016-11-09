@@ -28,16 +28,16 @@ function Table(){
     this.getViewId = function(){
         return self.viewId;
     };
+
     this.setSelectedRowLocalStorageKey = function(selectedRowLocalStorageKey){
         self.selectedRowLocalStorageKey = selectedRowLocalStorageKey + '-' + self.viewId;
     };
+
     this.getSelectedRowLocalStorageKey = function(){
         return self.selectedRowLocalStorageKey;
     };
+
     //Fin GETTER y SETTER
-
-
-
     //Genera la tabla con datos cargados
     this.genetateHtml = function(){
         var html = '';

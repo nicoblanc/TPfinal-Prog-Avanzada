@@ -1,5 +1,3 @@
-
-<?php // include './base.php'; ?>
 <!DOCTYPE html lang="es">
 <head>
     <!--CSS-->
@@ -62,16 +60,6 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 ">
-                <?php
-                /* $cabecera = array('id', 'Proyecto', 'Etapa');
-                  $filas = array(
-                  'fila1' => array('1', 'Facturacion', 'Analisis'),
-                  'fila2' => array('2', 'gestion de serie', 'Desarrollo')
-                  );
-
-                  $base = new base();
-                  echo $base->generar_tabla($cabecera, $filas);
-                 */ ?>
                 <div id="tabla_item"></div>
             </div>
         </div>
