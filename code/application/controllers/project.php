@@ -7,12 +7,8 @@ class Project extends CI_Controller
 {
     public function __construct() {
         parent::__construct();
-
+        $this->base = new Base();
         $this->load->model('project_model', 'Project_Model');
-
-        var_dump($this->Project_Model->listProject());
-        die();
-
     }
 
     public function render_view($pOutput = null)
@@ -37,4 +33,33 @@ class Project extends CI_Controller
         $this->load->view('base/footer_view', $output);
 
     }
+
+
+    public function listProjects(){
+        $data = [];
+        $data['projects'] = $this->Project_Model->listProjects();
+        $this->base->loadView('project/tabla_view', $data);
+    }
+
+    //administracion del proyecto
+    function adminPeoject($pId){
+        //obj:
+        //--conectara al modelo
+        //--conectar a la vista
+        if($pId != null and $pId != "") {
+
+        }else{
+            var_dump("id de proyectyo incorecto!!!");
+        }
+    }
+
+    //permite configurar
+    function addItem($pData){
+        $listItem = ['crear usuarios', 'asignacion de usuario'];
+    }
+
+    function asignCliente(){}//asignacion de cliente
+
+    function editStatus(){} //Modificar el estado del proyecto
+
 }

@@ -76,7 +76,8 @@
 
                         <li><a href="<?php echo base_url('/index.php/verificar'); ?>"><i class="fa fa-user"></i> Login</a></li>
 
-                        <li><a href="<?php echo base_url('/index.php/project/show_crud_view'); ?>"><i class="fa fa-plus"></i> Proyectos</a></li>
+                        <li><a href="<?php echo base_url('/index.php/project/show_crud_view'); ?>"><i class="fa fa-plus"></i>CRUD Proyectos</a></li>
+                        <li><a href="<?php echo base_url('/index.php/project/listProjects'); ?>"><i class="fa fa-plus"></i>Lista de Proyectos</a></li>
 
                         <li><a href="<?php echo base_url('/index.php/project/show_crud_view'); ?>"><i class="fa fa-plus"></i> Items</a></li>
 
