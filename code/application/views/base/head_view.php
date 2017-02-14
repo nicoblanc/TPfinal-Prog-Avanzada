@@ -70,16 +70,16 @@
                         <!--/Dropdown-->
 
 
-                        <li><a href="<?php echo base_url('/index.php/user/show_crud_view'); ?>"><i class="fa fa-plus"></i> Usuarios</a></li>
+                        <li><a href="<?php echo base_url('/index.php/user/show_crud_view'); ?>"><i class="fa fa-plus"></i>&nbsp; &nbsp; Usuarios</a></li>
 
-                        <li><a href="<?php echo base_url('/index.php/client/show_crud_view'); ?>"><i class="fa fa-plus"></i> Cliente</a></li>
+                        <li><a href="<?php echo base_url('/index.php/client/show_crud_view'); ?>"><i class="fa fa-plus"></i>&nbsp; &nbsp; Cliente</a></li>
 
                         <li><a href="<?php echo base_url('/index.php/verificar'); ?>"><i class="fa fa-user"></i> Login</a></li>
 
-                        <li><a href="<?php echo base_url('/index.php/project/show_crud_view'); ?>"><i class="fa fa-plus"></i>CRUD Proyectos</a></li>
-                        <li><a href="<?php echo base_url('/index.php/project/listProjects'); ?>"><i class="fa fa-plus"></i>Lista de Proyectos</a></li>
-                        <li><a href="<?php echo base_url('/index.php/item/listItems'); ?>"><i class="fa fa-plus"></i>Lista de Items</a></li>
-                        <li><a href="<?php echo base_url('/index.php/project/show_crud_view'); ?>"><i class="fa fa-plus"></i> Items</a></li>
+                        <li><a href="<?php echo base_url('/index.php/project/show_crud_view'); ?>"><i class="fa fa-plus"></i>&nbsp; &nbsp;CRUD Proyectos</a></li>
+                        <li><a href="<?php echo base_url('/index.php/project/listProjects'); ?>"><i class="fa fa-list"></i>&nbsp; &nbsp;Lista de Proyectos</a></li>
+
+                        <li><a href="<?php echo base_url('/index.php/item/show_crud_view'); ?>"><i class="fa fa-plus"></i>&nbsp; &nbsp;CRUD Items</a></li>
 
 
                     </ul>

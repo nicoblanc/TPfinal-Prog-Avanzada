@@ -42,14 +42,24 @@ class Project extends CI_Controller
     }
 
     //administracion del proyecto
-    function adminPeoject($pId){
+    function adminPeoject($pId=""){
         //obj:
         //--conectara al modelo
         //--conectar a la vista
-        if($pId != null and $pId != "") {
+        if($pId != null and $pId != "")
+        {
+            $data = [];
+            $data['project_code'] = $pId;
+            $data['project_Name'] = "Projecto de prueba";
+            $data["project_client"] = "";
 
-        }else{
-            var_dump("id de proyectyo incorecto!!!");
+            $this->base->loadView('project/admin_view', $data);
+        }
+        else
+        {
+            $data = [];
+            $data["msj"] = "Debe seleccionar un Proyecto en la tabla.";
+            $this->base->loadView('project/admin_view', $data);
         }
     }
 
