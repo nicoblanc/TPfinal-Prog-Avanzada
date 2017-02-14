@@ -7,7 +7,7 @@ class Item extends CI_Controller
 {
     public function __construct() {
         parent::__construct();
-
+        $this->base = new Base();
         $this->load->model('item_model', 'Item_Model');
     }
 
@@ -31,5 +31,11 @@ class Item extends CI_Controller
         $this->render_view($output);
         $this->load->view('base/footer_view', $output);
 
+    }
+
+    public function listItems(){
+        $data = [];
+        $data['items'] = $this->Item_Model->listItems();
+        $this->base->loadView('item/tabla_view', $data);
     }
 }
