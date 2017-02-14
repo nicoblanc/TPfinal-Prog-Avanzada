@@ -106,7 +106,7 @@ function Table(){
     };
 
     this.saveSelectedRow = function(){
-        $('#' + self.viewId + ' table tr').on('click', function(){          
+        $('#' + self.viewId + ' table tr').on('click', function(){
             self.storageSelectedRow($(this).attr('data-index'));
             self.getSelectedRow();
             $('#' + self.viewId + ' table tr.table-row-selected').removeClass('table-row-selected');
