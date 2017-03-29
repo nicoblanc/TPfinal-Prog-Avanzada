@@ -37,8 +37,8 @@ class Base_Model extends CI_Model
 
 	public function set_db_primary_key($pPk = 'id')
 	{
-		$this->db_primary_key = $pPk; 
-	}
+		$this->db_primary_key = $pPk;
+    }
 
 	public function get_db_primary_key()
 	{

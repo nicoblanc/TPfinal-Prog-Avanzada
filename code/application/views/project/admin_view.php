@@ -1,12 +1,43 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Mauricio
- * Date: 13/2/2017
- * Time: 8:36 PM
- */
 
-if (isset($msj)){ ?>
+
+<?php
+function view_list_items($pListItem)
+{
+
+    /*
+     * object(stdClass)#23 (2) { ["header"]=> array(3) {
+     *          [0]=> string(15) "Código de Item"
+     *          [1]=> string(4) "Item"
+     *          [2]=> string(8) "Proyecto"
+     * }
+     *  ["body"]=> array(1) {
+     *              [0]=> array(4) {
+     *                  [0]=> string(7) "Reporte"
+     *                  [1]=> string(1) "0"
+     *                  [2]=> string(1) "0"
+     *                  [3]=> string(1) "0"
+     *                 }
+     *  } }
+     *
+     *
+     * */
+
+
+    $html = "";
+
+
+    foreach ($pListItem->body as $item)
+    {
+        $html .= '<input type="checkbox" name="'.$item[0].'">'.$item[0].'<br>';
+
+    }
+
+    return $html;
+
+}
+?>
+
+<?php if (isset($msj)){ ?>
 
     <div class="container">
         <div class="row">
@@ -46,13 +77,13 @@ if (isset($msj)){ ?>
                                             Codigo
                                         </dt>
                                         <dd>
-                                            CODIGO DE PRUEBA
+                                            <?php echo $project_code?>
                                         </dd>
                                         <dt>
                                             Nombre
                                         </dt>
                                         <dd>
-                                            CODIGO DE PRUEBA
+                                            <?php echo $project_Name?>
                                         </dd>
                                         <dt>
                                             Cliente
@@ -68,12 +99,15 @@ if (isset($msj)){ ?>
                 </div>
             </div>
             <div id="items" class="tab-pane fade">
-                <h3>Menu 1</h3>
-                <p>Some content in menu 1.</p>
+                <p>Items Disponibles</p>
+                <form method="POST" action="<?php echo(base_url('/index.php/project/addItems'));?>">
+                    <?php echo view_list_items($list_items)?>
+                    <input type="submit" value="Asignar">
+                    <input type="hidden" name="projectcode" value="<?php echo($project_code);?>">
+                </form>
             </div>
             <div id="client" class="tab-pane fade">
-                <h3>Menu 2</h3>
-                <p>Some content in menu 2.</p>
+                <p>clientes disponibles</p>
             </div>
 
         </div>

@@ -25,7 +25,7 @@ class Item extends CI_Controller
             ['usercode'=>'Usuario']);
         */
 
-        $output = $this->Item_Model->crud();
+        $output = $this->Item_Model->crud(); 
 
         $this->load->view('base/head_view', $output);
         $this->render_view($output);

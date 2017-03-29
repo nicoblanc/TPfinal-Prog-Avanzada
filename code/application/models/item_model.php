@@ -40,4 +40,14 @@ class Item_Model extends Base_Model
             return array();
         }
     }
+
+    function updateItem($pProjectCode, $pItemCode)
+    {
+        $sql = "
+            UPDATE `item` SET `projectcode`= '$pProjectCode' WHERE `itemcode` = '$pItemCode'
+            ";
+
+        $query = $this->db->query($sql);
+
+    }
 }

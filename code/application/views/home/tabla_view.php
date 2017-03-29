@@ -51,6 +51,8 @@
         <h3>Gestion de proyectos de Software</h3>
     </div>
 </header>
+
+<!--
 <div class="container">
     <div class="row">
         <div class="col-md-12 ">
@@ -75,6 +77,6 @@
         tabla.show();
 
 </script>
-
+-->
 </body>
 </html>
