@@ -61,6 +61,11 @@ class Project extends CI_Controller
         }
     }
 
+    function getDataProject()
+    {
+
+    }
+
     //permite configurar
     function addItems(){
         $listItem = ['crear usuarios', 'asignacion de usuario'];

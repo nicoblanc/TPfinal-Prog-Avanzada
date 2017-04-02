@@ -1,38 +1,24 @@
 
 
 <?php
+//Crea lista de items diponibles
 function view_list_items($pListItem)
 {
-
-    /*
-     * object(stdClass)#23 (2) { ["header"]=> array(3) {
-     *          [0]=> string(15) "Código de Item"
-     *          [1]=> string(4) "Item"
-     *          [2]=> string(8) "Proyecto"
-     * }
-     *  ["body"]=> array(1) {
-     *              [0]=> array(4) {
-     *                  [0]=> string(7) "Reporte"
-     *                  [1]=> string(1) "0"
-     *                  [2]=> string(1) "0"
-     *                  [3]=> string(1) "0"
-     *                 }
-     *  } }
-     *
-     *
-     * */
-
-
-    $html = "";
-
+    //var_dump($pListItem->body);
+    $itemsToTable = array();
 
     foreach ($pListItem->body as $item)
     {
-        $html .= '<input type="checkbox" name="'.$item[0].'">'.$item[0].'<br>';
 
+        $itemAvailable = '<input type="checkbox" name="'.$item[0].'"/>';
+        $itemCode = $item[0];
+        $itemDescription = $item[2];
+
+        //Agrega elentos al array final
+        array_push($itemsToTable,array($itemAvailable,$itemCode, $itemDescription));
     }
 
-    return $html;
+    return json_encode($itemsToTable);
 
 }
 ?>
@@ -101,8 +87,8 @@ function view_list_items($pListItem)
             <div id="items" class="tab-pane fade">
                 <p>Items Disponibles</p>
                 <form method="POST" action="<?php echo(base_url('/index.php/project/addItems'));?>">
-                    <?php echo view_list_items($list_items)?>
-                    <input type="submit" value="Asignar">
+                    <input type="submit" value="Asignar"/>
+                    <div id="table_Select_Items"></div>
                     <input type="hidden" name="projectcode" value="<?php echo($project_code);?>">
                 </form>
             </div>
@@ -112,6 +98,49 @@ function view_list_items($pListItem)
 
         </div>
         </div>
+
+
+    <script>
+        $(document).ready(function () {
+
+            // ******************Gestion de tabla listado de items*********************
+            var tableItems= new Table();
+            tableItems.setViewId('table_Select_Items');
+            tableItems.setIndexPositionColumn(1);
+
+            var data = {
+                header: ['<input id="selectAllItems" type="checkbox">','Codigo','Descripcion'],
+                body: <?php echo view_list_items($list_items);?>
+            };
+
+            tableItems.setData(data);
+            tableItems.init();
+
+            //chequear o deschequear todos los elemtos
+            $('#selectAllItems').click(function(){
+                if( $('#selectAllItems').is(':checked') )
+                {
+                    $('#table_Select_Items td>input').prop("checked", "checked");
+
+                }else
+                    {
+                        $('#table_Select_Items td>input').prop("checked", "");
+                    }
+            });
+            //******************FIN Gestion de tabla listado de items*******************
+
+
+
+            //Botones
+            $('#btn1-admin').click(function() {
+                var url = BASE_URL + "index.php/project/adminPeoject/"+ tabla.getSelectedRow();
+                $(location).attr('href',url);
+            });
+        });
+
+
+    </script>
+
 
 <?php
  }//Fin del ELSE

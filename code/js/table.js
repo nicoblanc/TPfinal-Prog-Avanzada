@@ -6,11 +6,14 @@
  */
 
 function Table(){
+    var DEBUG = true;
     var self = this;
     this.data = {header: [], body: [[], [], []]};
     this.viewId = '';//Solo colocar texto ya que el "#" ya esta añadido
     this.border = "solid";
     this.selectedRowLocalStorageKey = "";
+    this.indexPositionColumn = 0;//para indicarle de que columna tomar el index
+                                // por defecto es cero ya que tomaria el id o code de cada elento
 
     //GETTER y SETTER
     this.setData = function(data){
@@ -37,6 +40,13 @@ function Table(){
         return self.selectedRowLocalStorageKey;
     };
 
+    this.setIndexPositionColumn = function(indexPositionColumn){
+        self.indexPositionColumn = indexPositionColumn;
+    };
+
+    this.getIndexPositionColumn = function(){
+        return self.indexPositionColumn;
+    };
     //Fin GETTER y SETTER
     //Genera la tabla con datos cargados
     this.genetateHtml = function(){
@@ -62,7 +72,7 @@ function Table(){
             var lengthBody = self.data.body.length;
 
             for (var x = 0; x < lengthBody; x++) {
-                html += '<tr data-index="' + self.data.body[x][0] + '">';
+                html += '<tr data-index="' + self.data.body[x][self.getIndexPositionColumn()] + '">';
                 for (var j = 0; j < self.data.body[x].length; j++) {
                     html += '   <td>';
                     html += self.data.body[x][j];
@@ -74,7 +84,8 @@ function Table(){
         html += '</tbody>';
         html += '</table>';
 
-
+        if (DEBUG)
+            console.log(html);
         return html;
     };
 
