@@ -48,8 +48,8 @@ class Project extends CI_Controller
             $data['project_client'] = "";
 
             //Listado de items
-            $data['list_items'] = $this->Item_model->listItems();
-
+            $data['list_items_unassigned'] = $this->Item_model->listItemsUnassigned();
+            $data['list_items_assigned'] = $this->Item_model->itemsByProject($pId);
 
             $this->base->loadView('project/admin_view', $data);
         }
@@ -71,19 +71,18 @@ class Project extends CI_Controller
         $listItem = ['crear usuarios', 'asignacion de usuario'];
 
 
-        var_dump($_POST);
-
+        var_dump(base_url());
 
         foreach ($_POST as $itemcode => $estado) {
 
-            echo "{$itemcode} => {$estado} ";
+            //echo "{$itemcode} => {$estado} ";
             if ($estado == "on")
             {
                 $this->Item_model->updateItem($_POST['projectcode'], str_replace("_", " ",$itemcode));
             }
         }
 
-
+        redirect(base_url("index.php/project/adminPeoject/".$_POST['projectcode']));
 
     }
 

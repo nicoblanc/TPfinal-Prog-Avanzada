@@ -2,7 +2,7 @@
 
 <?php
 //Crea lista de items diponibles
-function view_list_items($pListItem)
+function view_list_items_unassigned($pListItem)
 {
     //var_dump($pListItem->body);
     $itemsToTable = array();
@@ -21,6 +21,29 @@ function view_list_items($pListItem)
     return json_encode($itemsToTable);
 
 }
+
+//Crea lista de items del proyecto
+function view_list_items_assigned($pListItem)
+{
+    //var_dump($pListItem->body);
+    $itemsToTable = array();
+
+    foreach ($pListItem->body as $item)
+    {
+
+        $itemAvailable = '<input type="checkbox" name="'.$item[0].'"/>';
+        $itemCode = $item[0];
+        $itemDescription = $item[2];
+
+        //Agrega elentos al array final
+        array_push($itemsToTable,array($itemAvailable,$itemCode, $itemDescription));
+    }
+
+    return json_encode($itemsToTable);
+
+}
+
+
 ?>
 
 <?php if (isset($msj)){ ?>
@@ -49,6 +72,7 @@ function view_list_items($pListItem)
             <li class="active"><a data-toggle="tab" href="#data"><i class="fa fa-eye"></i>&nbsp; &nbsp; Datos</a></li>
             <li><a data-toggle="tab" href="#items"><i class="fa fa-plus"></i>&nbsp; &nbsp;Asignar Items</a></li>
             <li><a data-toggle="tab" href="#client"><i class="fa fa-plus"></i>&nbsp; &nbsp;Asignar Cliente</a></li>
+            <li><a data-toggle="tab" href="#adminItem"><i class="fa fa-list"></i>&nbsp; &nbsp; Items</a></li>
         </ul>
 
         <div class="tab-content">
@@ -88,12 +112,20 @@ function view_list_items($pListItem)
                 <p>Items Disponibles</p>
                 <form method="POST" action="<?php echo(base_url('/index.php/project/addItems'));?>">
                     <input type="submit" value="Asignar"/>
-                    <div id="table_Select_Items"></div>
+                    <div id="table_Select_Items_unassigned"></div>
                     <input type="hidden" name="projectcode" value="<?php echo($project_code);?>">
                 </form>
             </div>
             <div id="client" class="tab-pane fade">
                 <p>clientes disponibles</p>
+            </div>
+            <div id="adminItem" class="tab-pane fade">
+                <p>Items Asignados</p>
+                <form method="POST" action="<?php echo(base_url('/index.php/project/addItems'));?>">
+                    <!--<input type="submit" value="Asignar"/>-->
+                    <div id="table_Select_Items_assigned"></div>
+                    <!--<input type="hidden" name="projectcode" value="<?php echo($project_code);?>">-->
+                </form>
             </div>
 
         </div>
@@ -105,12 +137,12 @@ function view_list_items($pListItem)
 
             // ******************Gestion de tabla listado de items*********************
             var tableItems= new Table();
-            tableItems.setViewId('table_Select_Items');
+            tableItems.setViewId('table_Select_Items_unassigned');
             tableItems.setIndexPositionColumn(1);
 
             var data = {
                 header: ['<input id="selectAllItems" type="checkbox">','Codigo','Descripcion'],
-                body: <?php echo view_list_items($list_items);?>
+                body: <?php echo view_list_items_unassigned($list_items_unassigned);?>
             };
 
             tableItems.setData(data);
@@ -120,22 +152,52 @@ function view_list_items($pListItem)
             $('#selectAllItems').click(function(){
                 if( $('#selectAllItems').is(':checked') )
                 {
-                    $('#table_Select_Items td>input').prop("checked", "checked");
+                    $('#table_Select_Items_unassigned td>input').prop("checked", "checked");
 
                 }else
                     {
-                        $('#table_Select_Items td>input').prop("checked", "");
+                        $('#table_Select_Items_unassigned td>input').prop("checked", "");
                     }
             });
             //******************FIN Gestion de tabla listado de items*******************
 
 
 
-            //Botones
+            //****************************Botones**************************************
             $('#btn1-admin').click(function() {
                 var url = BASE_URL + "index.php/project/adminPeoject/"+ tabla.getSelectedRow();
                 $(location).attr('href',url);
             });
+
+            //****************************FIN Botones**************************************
+
+
+
+            // ******************Gestion de tabla listado de items asignados *********************
+            var tableItems= new Table();
+            tableItems.setViewId('table_Select_Items_assigned');
+            tableItems.setIndexPositionColumn(1);
+
+            var data = {
+                header: ['<input id="selectAllItemsAssigned" type="checkbox">','Codigo','Descripcion'],
+                body: <?php echo view_list_items_unassigned($list_items_assigned);?>
+            };
+
+            tableItems.setData(data);
+            tableItems.init();
+
+            //chequear o deschequear todos los elemtos
+            $('#selectAllItemsAssigned').click(function(){
+                if( $('#selectAllItemsAssigned').is(':checked') )
+                {
+                    $('#table_Select_Items_assigned td>input').prop("checked", "checked");
+
+                }else
+                {
+                    $('#table_Select_Items_assigned td>input').prop("checked", "");
+                }
+            });
+            //******************FIN Gestion de tabla listado de items*******************
         });
 
 

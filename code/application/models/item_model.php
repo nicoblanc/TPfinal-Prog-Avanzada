@@ -10,11 +10,12 @@ class Item_Model extends Base_Model
         parent::__construct();
     }
 
-    function listItems(){
+    function listItemsUnassigned(){
         try
         {
+            //ver que opcion poner
             $sql = "
-                SELECT * FROM `item`;
+                SELECT * FROM `item` WHERE `projectcode`= ' ';
             ";
             $query = $this->db->query($sql);
             //return $query->result();
@@ -48,6 +49,28 @@ class Item_Model extends Base_Model
             ";
 
         $query = $this->db->query($sql);
+
+    }
+
+    function itemsByProject($pProjectCode){
+
+        $sql = "
+                SELECT * FROM `item` WHERE `projectcode`= '$pProjectCode';                      
+            ";
+
+        $query = $this->db->query($sql);
+
+        //var_dump($query);die();
+
+        $result = new stdClass();
+        $result->header   =  $this->tableViewHeaders;//Array
+        $result->body     =  array();
+
+        foreach ($query->result() as $element) {
+            $result->body[] = array_values((array) $element);
+        }
+
+        return $result;
 
     }
 }
