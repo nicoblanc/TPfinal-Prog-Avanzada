@@ -1,6 +1,6 @@
 /*HTML elements */
 label, input, table {
-  font-size: 15px; }
+  font-size: 12px; }
 
 #Crud-Wrapper {
   max-width: 99%; }
@@ -31,5 +31,9 @@ label, input, table {
 .dataTables_filter > label > input {
   height: 25px;
   font-size: 15px; }
+
+label {
+  font-size: 12px !important;
+}
 
 /*# sourceMappingURL=grocery_crud_corrector.css.map */

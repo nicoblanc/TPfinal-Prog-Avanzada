@@ -55,7 +55,7 @@ class Base_Model extends CI_Model
         return $this->unset_columns_view;
     }
 
-    public function set_change_columns_name($pChangeColumnName = array())
+    public function set_change_columns_name($pChangeColumnName = array())//array key => value
     {
         $this->change_columns_name =$pChangeColumnName;
     }
@@ -76,7 +76,14 @@ class Base_Model extends CI_Model
     {
         $this->grocery_crud->set_table($this->db_table_name);
         $this->grocery_crud->unset_columns($this->unset_columns_view);
-        $this->grocery_crud->display_as($this->change_columns_name);
+
+        //var_dump($this->change_columns_name);die;
+
+        foreach ($this->change_columns_name as $key => $val)
+        {
+            $this->grocery_crud->display_as($key, $val);
+        }
+
         #$this->grocery_crud->set_theme('datatables');
 
         $output = $this->grocery_crud->render();

@@ -19,11 +19,13 @@ class Item extends CI_Controller
     public function show_crud_view()
     {
         $this->Item_Model->set_db_table_name('item');
-        //$this->User_Model->set_unset_columns_view(['password']);
-        /*
-         *$this->User_Model->set_change_columns_name(
-            ['usercode'=>'Usuario']);
-        */
+        $this->Item_Model->set_change_columns_name(array(
+                'itemcode'=>'Código',
+                'itemtype'=>'Tipo',
+                'description'=>'Descripción',
+                'projectcode'=>'Código de Proyecto',
+                'prioriry'=>'Prioridad'
+            ));
 
         $output = $this->Item_Model->crud(); 
 

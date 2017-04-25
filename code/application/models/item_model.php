@@ -29,7 +29,8 @@ class Item_Model extends Base_Model
             $result->header   =  $this->tableViewHeaders;//Array
             $result->body     =  array();
 
-            foreach ($query->result() as $element) {
+            foreach ($query->result() as $element)
+            {
                 $result->body[] = array_values((array) $element);
             }
 

@@ -48,7 +48,8 @@
 
 <header>
     <div class="col-lg-12  text-center">
-        <h3>Gestion de proyectos de Software</h3>
+        <img src="<?php echo base_url('images/logo.png'); ?>">
+        <h3>Sistema Gestor de Proyectos</h3>
     </div>
 </header>
 

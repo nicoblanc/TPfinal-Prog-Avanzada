@@ -14,11 +14,11 @@
                 <i class="fa fa-cog "></i>&nbsp;&nbsp; Administrar
             </button>
         </div>
-        <div class="col-md-1">
+        <!--<div class="col-md-1">
             <button id="btn2-view" class="btn btn-default">
                 <i class="fa fa-eye "></i>&nbsp;&nbsp; &nbsp; Ver
             </button>
-        </div>
+        </div>-->
     </div>
 
     <div class="row">

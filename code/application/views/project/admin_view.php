@@ -1,5 +1,4 @@
 
-
 <?php
 //Crea lista de items diponibles
 function view_list_items_unassigned($pListItem)

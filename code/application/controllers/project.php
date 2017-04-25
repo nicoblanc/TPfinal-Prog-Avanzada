@@ -67,23 +67,19 @@ class Project extends CI_Controller
     }
 
     //permite configurar
-    function addItems(){
-        $listItem = ['crear usuarios', 'asignacion de usuario'];
+    function addItems()
+    {
+        //indice = codigo del item
+        //valor estado del on
 
-
-        var_dump(base_url());
-
-        foreach ($_POST as $itemcode => $estado) {
-
-            //echo "{$itemcode} => {$estado} ";
+        foreach ($_POST as $itemcode => $estado)
+        {
             if ($estado == "on")
             {
                 $this->Item_model->updateItem($_POST['projectcode'], str_replace("_", " ",$itemcode));
             }
         }
-
         redirect(base_url("index.php/project/adminPeoject/".$_POST['projectcode']));
-
     }
 
     function asignCliente(){}//asignacion de cliente

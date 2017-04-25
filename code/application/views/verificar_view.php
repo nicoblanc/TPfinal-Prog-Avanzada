@@ -2,7 +2,8 @@
     <div class="row">
         <div class="col-md-4">
                <?php echo form_open(base_url().'index.php/verificar/nueva_sesion'); ?>
-                <h4>Ingresar</h4>
+                <img src="<?php echo base_url('images/logo.png'); ?>" style="border-radius: 7px; width: 100%;">
+                <div></div><br>
                         <div class="form-group">
                             <label for="inputNom" class="sr-only">Usuario</label>
                             <input name="nom" type="text" id="nom" class="form-control" placeholder="Usuario" required="" autofocus="">
