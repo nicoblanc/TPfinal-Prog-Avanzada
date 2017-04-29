@@ -33,8 +33,8 @@
     }?>
 
     <!-- Corrector -->
-    <link rel="stylesheet" href="<?php echo base_url('css/corrector/grocery_crud_corrector.css'  ); ?>">
-
+    <!--<link rel="stylesheet" href="<?php echo base_url('css/corrector/grocery_crud_corrector.css'  ); ?>">
+    -->
 
     <title>Proyectos de Software</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
