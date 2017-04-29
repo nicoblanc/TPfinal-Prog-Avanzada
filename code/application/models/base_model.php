@@ -11,10 +11,10 @@
 
 class Base_Model extends CI_Model 
 {
-	private $db_table_name = '';
-	private $db_primary_key = '';
-    private $unset_columns_view = array();
-    private $change_columns_name = array(); //array de clave => valor
+	public $db_table_name = '';
+	public $db_primary_key = '';
+    public $unset_columns_view = array();
+    public $change_columns_name = array(); //array de clave => valor
 
 	public function __construct()
 	{
@@ -55,40 +55,37 @@ class Base_Model extends CI_Model
         return $this->unset_columns_view;
     }
 
-    public function set_change_columns_name($pChangeColumnName = array())//array key => value
+        public function set_change_columns_name($pChangeColumnName = array())//array key => value
     {
         $this->change_columns_name =$pChangeColumnName;
     }
 
-    public function get_change_columns_name()
+        public function get_change_columns_name()
     {
         return $this->change_columns_name;
     }
 
-	//Metodos
-	public function get_by_id($pId)
-	{
-		$query = $this->db->get_where($this->db_table_name, array('ID' => $pId));
+        //Metodos
+        public function get_by_id($pId)
+    {
+        $query = $this->db->get_where($this->db_table_name, array('ID' => $pId));
         return $query->row();
-	}
+    }
 
     public function crud()
     {
-        $this->grocery_crud->set_table($this->db_table_name);
-        $this->grocery_crud->unset_columns($this->unset_columns_view);
+            $this->grocery_crud->set_table($this->db_table_name);
+            $this->grocery_crud->unset_columns($this->unset_columns_view);
 
-        //var_dump($this->change_columns_name);die;
+            //var_dump($this->change_columns_name);die;
 
-        foreach ($this->change_columns_name as $key => $val)
-        {
-            $this->grocery_crud->display_as($key, $val);
-        }
+            foreach ($this->change_columns_name as $key => $val)
+            {
+                $this->grocery_crud->display_as($key, $val);
+            }
 
-        #$this->grocery_crud->set_theme('datatables');
-
-        $output = $this->grocery_crud->render();
-
-       return $output;
+            $output = $this->grocery_crud->render();
+            return $output;
     }
-		
-} 
+
+}

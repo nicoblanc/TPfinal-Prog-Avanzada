@@ -8,6 +8,10 @@ class Item_Model extends Base_Model
     function __construct()
     {
         parent::__construct();
+        $this->load->database();
+        $this->load->helper('url');
+        $this->load->library('grocery_CRUD');
+
     }
 
     function listItemsUnassigned(){
@@ -18,12 +22,6 @@ class Item_Model extends Base_Model
                 SELECT * FROM `item` WHERE `projectcode`= ' ';
             ";
             $query = $this->db->query($sql);
-            //return $query->result();
-
-            /*foreach ($query->result() as $element) {
-                $result->body[] = array_values((array) $element);
-            }*/
-
 
             $result = new stdClass();
             $result->header   =  $this->tableViewHeaders;//Array
@@ -33,9 +31,7 @@ class Item_Model extends Base_Model
             {
                 $result->body[] = array_values((array) $element);
             }
-
             return $result;
-
         }
         catch (Exception $e)
         {
@@ -46,8 +42,8 @@ class Item_Model extends Base_Model
     function updateItem($pProjectCode, $pItemCode)
     {
         $sql = "
-            UPDATE `item` SET `projectcode`= '$pProjectCode' WHERE `itemcode` = '$pItemCode'
-            ";
+                UPDATE `item` SET `projectcode`= '$pProjectCode' WHERE `itemcode` = '$pItemCode' 
+               ";
 
         $query = $this->db->query($sql);
 
@@ -58,11 +54,7 @@ class Item_Model extends Base_Model
         $sql = "
                 SELECT * FROM `item` WHERE `projectcode`= '$pProjectCode';                      
             ";
-
         $query = $this->db->query($sql);
-
-        //var_dump($query);die();
-
         $result = new stdClass();
         $result->header   =  $this->tableViewHeaders;//Array
         $result->body     =  array();
@@ -70,8 +62,40 @@ class Item_Model extends Base_Model
         foreach ($query->result() as $element) {
             $result->body[] = array_values((array) $element);
         }
-
         return $result;
+    }
+
+
+    function crud(){
+        //var_dump($this); die();
+
+        $this->grocery_crud->set_table($this->db_table_name);
+        $this->grocery_crud->unset_columns($this->unset_columns_view);
+
+
+        //Renombre columnas
+        foreach ($this->change_columns_name as $key => $val)
+        {
+            $this->grocery_crud->display_as($key, $val);
+        }
+
+        $this->grocery_crud->field_type('itemtype','dropdown',
+            array('1' => 'Nuevo requeriminto', '2' => 'Bug','3' => 'Mejora'));
+
+        $output = $this->grocery_crud->render();
+        return $output;
+
 
     }
+
+    function getAllitemType(){}
+
+    //cambiar estado
+    function chageStatus(){
+        //ver como crear historial de status
+
+    }
+
+
+
 }

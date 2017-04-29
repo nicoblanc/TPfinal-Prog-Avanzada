@@ -9,6 +9,8 @@ class Verificar_model extends CI_Model {
 
        $query = $this->db->get_where('user', array('usercode' => $nom, 'password'=> $pass));
 
+        var_dump($query->result());
+
 		if ($query->num_rows()==1)
 		{
 			var_dump($query->result());
