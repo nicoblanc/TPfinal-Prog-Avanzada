@@ -27,7 +27,7 @@ div.DTTT_container
 }
 .ui-input-button
 {
-	font-size: 15px !important;	
+	font-size: 12px !important;
 }
 .form-content
 {
@@ -151,13 +151,19 @@ input.field_error
 	background: #fafafa;
 }
 .datatables div.form-div textarea
+ {
+	 font-size: 15px;
+	 border: 1px solid #AAA;
+	 padding: 5px 5px 5px 5px;
+	 background: #fafafa;
+	 width: 100%;
+	 height: 100px;
+ }
+
+
+.chosen-search input
 {
-	font-size: 15px;
-	border: 1px solid #AAA;
-	padding: 5px 5px 5px 5px;
-	background: #fafafa;
-	width: 500px;
-	height: 100px;	
+	width: 100% !important;
 }
 
 .datatables div.form-div textarea:hover, .datatables div.form-div textarea:focus,

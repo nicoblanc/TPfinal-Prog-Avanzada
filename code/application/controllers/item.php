@@ -32,12 +32,36 @@ class Item extends CI_Controller
         $this->load->view('base/head_view', $output);
         $this->render_view($output);
         $this->load->view('base/footer_view', $output);
-
     }
 
-    public function listItems(){
+    public function listItems()
+    {
         $data = [];
         $data['items'] = $this->Item_Model->listItems();
         $this->base->loadView('item/tabla_view', $data);
+    }
+
+
+    public function adminItem($pItemId)
+    {
+        $data = array('itemCode' => $pItemId);
+        $this->base->loadView('item/admin_view', $data);
+    }
+
+
+
+    public function changeState($pItemCode = null)
+    {
+        if($pItemCode != null)
+        {
+            var_dump($_POST);
+
+
+           $result = $this->Item_Model->chageState($pItemCode, $_POST['itemState']);
+
+           var_dump($result); die();
+
+        }
+
     }
 }

@@ -14,7 +14,7 @@ class Item_Model extends Base_Model
 
     }
 
-    function listItemsUnassigned(){
+    public function listItemsUnassigned(){
         try
         {
             //ver que opcion poner
@@ -39,7 +39,7 @@ class Item_Model extends Base_Model
         }
     }
 
-    function updateItem($pProjectCode, $pItemCode)
+    public function updateItem($pProjectCode, $pItemCode)
     {
         $sql = "
                 UPDATE `item` SET `projectcode`= '$pProjectCode' WHERE `itemcode` = '$pItemCode' 
@@ -49,7 +49,7 @@ class Item_Model extends Base_Model
 
     }
 
-    function itemsByProject($pProjectCode){
+    public function itemsByProject($pProjectCode){
 
         $sql = "
                 SELECT * FROM `item` WHERE `projectcode`= '$pProjectCode';                      
@@ -66,7 +66,7 @@ class Item_Model extends Base_Model
     }
 
 
-    function crud(){
+    public function crud(){
         //var_dump($this); die();
 
         $this->grocery_crud->set_table($this->db_table_name);
@@ -88,11 +88,31 @@ class Item_Model extends Base_Model
 
     }
 
-    function getAllitemType(){}
+    public function getAllitemType()
+    {
+        $sql = "
+                SELECT * FROM `itemtype`
+               ";
+        $query = $this->db->query($sql);
+        return $query;
+    }
 
-    //cambiar estado
-    function chageStatus(){
-        //ver como crear historial de status
+    public function chageState($itemCode, $itemState)
+    {
+        $description = 'prueba';
+        $ReponsibleUserId = '1';
+
+        $sql = "
+               INSERT INTO `itemhistory`(`creationdate`, `itemcode`, `seqstate`, `itemstate`, `description`, `responsibleuser`) 
+               VALUES (DATE('2017-05-02'),$itemCode,1,$itemState,' descripcion de prueba','1');
+               ";
+        $query = $this->db->query($sql);
+        return $query;
+
+    }
+
+    public function getItemsByHistoryRange($dateFrom, $dateTo)
+    {
 
     }
 

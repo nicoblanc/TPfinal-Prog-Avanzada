@@ -9,17 +9,15 @@ class Verificar_model extends CI_Model {
 
        $query = $this->db->get_where('user', array('usercode' => $nom, 'password'=> $pass));
 
-        var_dump($query->result());
-
 		if ($query->num_rows()==1)
 		{
-			var_dump($query->result());
-		    return $query->result();
+			//Agrega el usuario a la sesion.
+		    $_SESSION["user_login"] = $nom;
 
+		    return $query->result();
 		}
 		else
 		{
-			//redirect(base_url().'index.php/verificar');
             return null;
 		}
 	}

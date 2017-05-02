@@ -11,7 +11,7 @@ function view_list_items_unassigned($pListItem)
 
         $itemAvailable = '<input type="checkbox" name="'.$item[0].'"/>';
         $itemCode = $item[0];
-        $itemDescription = $item[2];
+        $itemDescription = $item[1];
 
         //Agrega elentos al array final
         array_push($itemsToTable,array($itemAvailable,$itemCode, $itemDescription));
@@ -21,7 +21,7 @@ function view_list_items_unassigned($pListItem)
 
 }
 
-//Crea lista de items del proyecto
+//Crea lista de items asignados al proyecto
 function view_list_items_assigned($pListItem)
 {
     //var_dump($pListItem->body);
@@ -32,10 +32,13 @@ function view_list_items_assigned($pListItem)
 
         $itemAvailable = '<input type="checkbox" name="'.$item[0].'"/>';
         $itemCode = $item[0];
-        $itemDescription = $item[2];
+        $itemDescription = $item[1];
+        $url = base_url("/index.php/item/adminItem").'/'. $item[0];
+
+        $linkItemAdmin = '<a href="'.$url.'">Administrar »</a>';
 
         //Agrega elentos al array final
-        array_push($itemsToTable,array($itemAvailable,$itemCode, $itemDescription));
+        array_push($itemsToTable,array($itemAvailable,$itemCode, $itemDescription, $linkItemAdmin));
     }
 
     return json_encode($itemsToTable);
@@ -69,9 +72,10 @@ function view_list_items_assigned($pListItem)
         <div class="container">
         <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#data"><i class="fa fa-eye"></i>&nbsp; &nbsp; Datos</a></li>
+            <li><a data-toggle="tab" href="#adminItem"><i class="fa fa-list"></i>&nbspItems</a></li>
             <li><a data-toggle="tab" href="#items"><i class="fa fa-plus"></i>&nbsp; &nbsp;Asignar Items</a></li>
             <li><a data-toggle="tab" href="#client"><i class="fa fa-plus"></i>&nbsp; &nbsp;Asignar Cliente</a></li>
-            <li><a data-toggle="tab" href="#adminItem"><i class="fa fa-list"></i>&nbsp; &nbsp; Items</a></li>
+
         </ul>
 
         <div class="tab-content">
@@ -107,17 +111,6 @@ function view_list_items_assigned($pListItem)
                     </div>
                 </div>
             </div>
-            <div id="items" class="tab-pane fade">
-                <p>Items Disponibles</p>
-                <form method="POST" action="<?php echo(base_url('/index.php/project/addItems'));?>">
-                    <input type="submit" value="Asignar"/>
-                    <div id="table_Select_Items_unassigned"></div>
-                    <input type="hidden" name="projectcode" value="<?php echo($project_code);?>">
-                </form>
-            </div>
-            <div id="client" class="tab-pane fade">
-                <p>clientes disponibles</p>
-            </div>
             <div id="adminItem" class="tab-pane fade">
                 <p>Items Asignados</p>
                 <form method="POST" action="<?php echo(base_url('/index.php/project/addItems'));?>">
@@ -126,6 +119,18 @@ function view_list_items_assigned($pListItem)
                     <!--<input type="hidden" name="projectcode" value="<?php echo($project_code);?>">-->
                 </form>
             </div>
+            <div id="items" class="tab-pane fade">
+                <p>Items Disponibles</p>
+                <form method="POST" action="<?php echo(base_url('/index.php/project/addItems'));?>">
+                    <input class="btn btn-default" type="submit" value="Asignar" />
+                    <div id="table_Select_Items_unassigned"></div>
+                    <input type="hidden" name="projectcode" value="<?php echo($project_code);?>">
+                </form>
+            </div>
+            <div id="client" class="tab-pane fade">
+                <p>clientes disponibles</p>
+            </div>
+
 
         </div>
         </div>
@@ -178,8 +183,8 @@ function view_list_items_assigned($pListItem)
             tableItems.setIndexPositionColumn(1);
 
             var data = {
-                header: ['<input id="selectAllItemsAssigned" type="checkbox">','Codigo','Descripcion'],
-                body: <?php echo view_list_items_unassigned($list_items_assigned);?>
+                header: ['<input id="selectAllItemsAssigned" type="checkbox">','Codigo','Descripcion', 'Acción'],
+                body: <?php echo view_list_items_assigned($list_items_assigned);?>
             };
 
             tableItems.setData(data);

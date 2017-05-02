@@ -1,11 +1,6 @@
 <?php // include './base.php';           ?>
 <?php $CI = & get_instance(); ?>
 
-<header>
-    <!--<div class="col-lg-12  text-center">
-        <h3>Proyectos</h3>
-    </div>-->
-</header>
 <div class="container">
 
     <div class="row">
@@ -14,11 +9,6 @@
                 <i class="fa fa-cog "></i>&nbsp;&nbsp; Administrar
             </button>
         </div>
-        <!--<div class="col-md-1">
-            <button id="btn2-view" class="btn btn-default">
-                <i class="fa fa-eye "></i>&nbsp;&nbsp; &nbsp; Ver
-            </button>
-        </div>-->
     </div>
 
     <div class="row">

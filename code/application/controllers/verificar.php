@@ -36,7 +36,7 @@ class Verificar extends CI_Controller {
         {
 	       $nom = $this->input->post('nom');
 
-	       $pass = $this->input->post('pass');
+	       $pass = $this->input->post('password');
     	   //comprobamos si existen en la base de datos enviando los datos al modelo
     	   $login = $this->verificar_model->verificar($nom, $pass);
             if ($login)
