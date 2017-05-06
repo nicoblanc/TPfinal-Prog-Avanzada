@@ -11,16 +11,13 @@ class Item_Model extends Base_Model
         $this->load->database();
         $this->load->helper('url');
         $this->load->library('grocery_CRUD');
-
     }
 
     public function listItemsUnassigned(){
         try
         {
             //ver que opcion poner
-            $sql = "
-                SELECT * FROM `item` WHERE `projectcode`= ' ';
-            ";
+            $sql = "SELECT * FROM `item` WHERE `projectcode`= ' ';";
             $query = $this->db->query($sql);
 
             $result = new stdClass();
