@@ -33,12 +33,14 @@ function view_list_items_assigned($pListItem)
         $itemAvailable = '<input type="checkbox" name="'.$item[0].'"/>';
         $itemCode = $item[0];
         $itemDescription = $item[1];
-        $url = base_url("/index.php/item/adminItem").'/'. $item[0];
 
+        $itemState = "[ESTADO DEL ITEM Consulta historica join]";
+
+        $url = base_url("/index.php/item/adminItem").'/'. $item[0];
         $linkItemAdmin = '<a href="'.$url.'">Administrar »</a>';
 
         //Agrega elentos al array final
-        array_push($itemsToTable,array($itemAvailable,$itemCode, $itemDescription, $linkItemAdmin));
+        array_push($itemsToTable,array($itemAvailable,$itemCode, $itemDescription,$itemState ,$linkItemAdmin));
     }
 
     return json_encode($itemsToTable);
@@ -87,22 +89,22 @@ function view_list_items_assigned($pListItem)
                                 <div class="col-md-12">
                                     <dl class="dl-horizontal">
                                         <dt>
-                                            Codigo
+                                            Codigo:
                                         </dt>
                                         <dd>
-                                            <?php echo $project_code?>
+                                            <?php echo $project_code;?>
                                         </dd>
                                         <dt>
-                                            Nombre
+                                            Descripción:
                                         </dt>
                                         <dd>
-                                            <?php echo $project_Name?>
+                                            <?php echo $project_Name;?>
                                         </dd>
                                         <dt>
-                                            Cliente
+                                            Cliente:
                                         </dt>
                                         <dd>
-                                            CODIGO DE PRUEBA
+                                            <?php echo $project_client;?>
                                         </dd>
                                     </dl>
                                 </div>
@@ -183,7 +185,7 @@ function view_list_items_assigned($pListItem)
             tableItems.setIndexPositionColumn(1);
 
             var data = {
-                header: ['<input id="selectAllItemsAssigned" type="checkbox">','Codigo','Descripcion', 'Acción'],
+                header: ['<input id="selectAllItemsAssigned" type="checkbox">','Codigo','Descripcion', 'Estado', 'Acción'],
                 body: <?php echo view_list_items_assigned($list_items_assigned);?>
             };
 

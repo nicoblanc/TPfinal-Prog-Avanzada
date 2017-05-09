@@ -42,9 +42,17 @@ class Item extends CI_Controller
     }
 
 
-    public function adminItem($pItemId)
+    public function adminItem($pItemCode)
     {
-        $data = array('itemCode' => $pItemId);
+
+        $itemLastState = $this->Item_Model->getLastStateByItem($pItemCode);
+
+
+        $data = array(
+            'itemCode'  => $pItemCode,
+            'itemStateDescription' => $itemLastState->description,
+            'itemSteteCode' => $itemLastState->itemstate
+            );
         $this->base->loadView('item/admin_view', $data);
     }
 
@@ -54,13 +62,10 @@ class Item extends CI_Controller
     {
         if($pItemCode != null)
         {
-            var_dump($_POST);
+            $this->Item_Model->chageState($pItemCode, $_POST['itemState']);
 
-
-           $result = $this->Item_Model->chageState($pItemCode, $_POST['itemState']);
-
-           var_dump($result); die();
-
+            //redirecciona a la vista de administracion.
+            $this->adminItem($pItemCode);
         }
 
     }

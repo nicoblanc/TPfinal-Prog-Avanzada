@@ -43,9 +43,12 @@ class Project extends CI_Controller
         if($pId != null and $pId != "")
         {
             $data = [];
+
+            $project = $this->Project_Model->get_by_id('projectcode',$pId);
+
             $data['project_code'] = $pId;
-            $data['project_Name'] = "CODIGO DE PRUEBA";
-            $data['project_client'] = "";
+            $data['project_Name'] = $project->description;
+            $data['project_client'] = $project->clientcode;
 
             //Listado de items
             $data['list_items_unassigned'] = $this->Item_model->listItemsUnassigned();
@@ -69,9 +72,6 @@ class Project extends CI_Controller
     //permite configurar
     function addItems()
     {
-        //indice = codigo del item
-        //valor estado del on
-
         foreach ($_POST as $itemcode => $estado)
         {
             if ($estado == "on")

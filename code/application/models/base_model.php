@@ -66,9 +66,12 @@ class Base_Model extends CI_Model
     }
 
         //Metodos
-        public function get_by_id($pId)
+        public function get_by_id($columName, $pCode)
     {
-        $query = $this->db->get_where($this->db_table_name, array('ID' => $pId));
+        //$query = $this->db->get_where($this->db_table_name, array($columName => (int)$pCode));
+
+        $sql = "SELECT * FROM project WHERE `$columName` = $pCode;";
+        $query = $this->db->query($sql);
         return $query->row();
     }
 

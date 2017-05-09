@@ -3,7 +3,7 @@
 
 class Project_Model extends Base_Model
 {
-    private $tableViewHeaders = array('Código de Proyecto', 'ID Cliente', 'Proyecto');
+    private $tableViewHeaders = array('Código de Proyecto', 'Proyecto');
     function __construct()
     {
         parent::__construct();
@@ -13,15 +13,9 @@ class Project_Model extends Base_Model
         try
         {
             $sql = "
-                SELECT * FROM `project`;
+                SELECT `projectcode`, `description` FROM `project`;
             ";
             $query = $this->db->query($sql);
-            //return $query->result();
-
-            /*foreach ($query->result() as $element) {
-                $result->body[] = array_values((array) $element);
-            }*/
-
 
             $result = new stdClass();
             $result->header   =  $this->tableViewHeaders;//Array

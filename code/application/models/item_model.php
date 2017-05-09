@@ -36,39 +36,35 @@ class Item_Model extends Base_Model
         }
     }
 
+
     public function updateItem($pProjectCode, $pItemCode)
     {
-        $sql = "
-                UPDATE `item` SET `projectcode`= '$pProjectCode' WHERE `itemcode` = '$pItemCode' 
-               ";
-
+        $sql = "UPDATE `item` SET `projectcode`= '$pProjectCode' WHERE `itemcode` = '$pItemCode' ";
         $query = $this->db->query($sql);
-
     }
+
 
     public function itemsByProject($pProjectCode){
 
-        $sql = "
-                SELECT * FROM `item` WHERE `projectcode`= '$pProjectCode';                      
-            ";
-        $query = $this->db->query($sql);
-        $result = new stdClass();
+        $sql = "SELECT * FROM `item` WHERE `projectcode`= '$pProjectCode';";
+
+        $query            =  $this->db->query($sql);
+        $result           =  new stdClass();
         $result->header   =  $this->tableViewHeaders;//Array
         $result->body     =  array();
 
-        foreach ($query->result() as $element) {
+        foreach ($query->result() as $element)
+        {
             $result->body[] = array_values((array) $element);
         }
+
         return $result;
     }
 
 
     public function crud(){
-        //var_dump($this); die();
-
         $this->grocery_crud->set_table($this->db_table_name);
         $this->grocery_crud->unset_columns($this->unset_columns_view);
-
 
         //Renombre columnas
         foreach ($this->change_columns_name as $key => $val)
@@ -78,33 +74,59 @@ class Item_Model extends Base_Model
 
         $this->grocery_crud->field_type('itemtype','dropdown',
             array('1' => 'Nuevo requeriminto', '2' => 'Bug','3' => 'Mejora'));
-
         $output = $this->grocery_crud->render();
         return $output;
-
-
     }
+
 
     public function getAllitemType()
     {
-        $sql = "
-                SELECT * FROM `itemtype`
-               ";
+        $sql = "SELECT * FROM `itemtype`";
         $query = $this->db->query($sql);
         return $query;
     }
+
+
+    public function changeOldState($pItemCode)
+    {
+        $sql = "
+               UPDATE `itemhistory` 
+               SET `isLastState`= FALSE 
+               WHERE `itemcode`= $pItemCode;                
+               ";
+        $query = $this->db->query($sql);
+    }
+
 
     public function chageState($itemCode, $itemState)
     {
         $description = 'prueba';
         $ReponsibleUserId = '1';
 
-        $sql = "
-               INSERT INTO `itemhistory`(`creationdate`, `itemcode`, `seqstate`, `itemstate`, `description`, `responsibleuser`) 
-               VALUES (DATE('2017-05-02'),$itemCode,1,$itemState,' descripcion de prueba','1');
-               ";
+        $this->changeOldState($itemCode);//COLOCA ESTADOS ANTIGUO 0 A LAS TUPLAS HISTORICAS DEL ITEM
+
+        $sql = "                         
+               
+               INSERT INTO `itemhistory`(`creationdate`, `itemcode`, `seqstate`, `itemstate`, `description`, `responsibleuser`,`isLastState`) 
+               VALUES (NOW(),$itemCode,1,$itemState,' descripcion de prueba','1',1);";
         $query = $this->db->query($sql);
-        return $query;
+        //return $query;
+    }
+
+
+    public function getLastStateByItem($itemCode = '')
+    {
+        //Consultar en la tabla historica para devolver el ultimo estado del item.
+        $sql = "
+        SELECT `itemhistory`.`itemstate`, `itemstate`.`description`  FROM `itemhistory`
+
+        JOIN `itemstate` ON  `itemhistory`.`itemstate` = `itemstate`.`itemstatecode`
+
+        WHERE   `itemcode` = $itemCode AND `isLastState` = 1; ";
+
+        $query = $this->db->query($sql);
+
+        return $query->row();
 
     }
 
