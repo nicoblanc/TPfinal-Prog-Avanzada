@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e581499f-9da8-4864-a278-f02909de8b72" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/application/controllers/item.php" afterPath="$PROJECT_DIR$/code/application/controllers/item.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/application/controllers/project.php" afterPath="$PROJECT_DIR$/code/application/controllers/project.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/application/models/base_model.php" afterPath="$PROJECT_DIR$/code/application/models/base_model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/application/models/item_model.php" afterPath="$PROJECT_DIR$/code/application/models/item_model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/application/models/project_model.php" afterPath="$PROJECT_DIR$/code/application/models/project_model.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/application/views/item/admin_view.php" afterPath="$PROJECT_DIR$/code/application/views/item/admin_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/application/views/project/admin_view.php" afterPath="$PROJECT_DIR$/code/application/views/project/admin_view.php" />
     </list>
     <ignored path="TPfinal-Prog-Avanzada.git.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -66,21 +60,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="item.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="item.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/code/application/controllers/item.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="53" column="47" selection-start-line="53" selection-start-column="47" selection-end-line="53" selection-end-column="47" />
+            <state relative-caret-position="311">
+              <caret line="53" column="29" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin_view.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="admin_view.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code/application/views/item/admin_view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="32" column="79" selection-start-line="32" selection-start-column="79" selection-end-line="32" selection-end-column="79" />
+            <state relative-caret-position="229">
+              <caret line="33" column="40" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -182,11 +176,11 @@
         <option value="$PROJECT_DIR$/code/application/views/project/tabla_view.php" />
         <option value="$PROJECT_DIR$/code/application/models/base_model.php" />
         <option value="$PROJECT_DIR$/code/application/models/project_model.php" />
-        <option value="$PROJECT_DIR$/code/application/controllers/item.php" />
         <option value="$PROJECT_DIR$/code/application/models/item_model.php" />
         <option value="$PROJECT_DIR$/code/application/views/project/admin_view.php" />
         <option value="$PROJECT_DIR$/code/application/controllers/project.php" />
         <option value="$PROJECT_DIR$/code/application/views/item/admin_view.php" />
+        <option value="$PROJECT_DIR$/code/application/controllers/item.php" />
       </list>
     </option>
   </component>
@@ -557,12 +551,12 @@
       <workItem from="1493170671076" duration="430000" />
       <workItem from="1493233828688" duration="10306000" />
       <workItem from="1493761724843" duration="11970000" />
-      <workItem from="1494290828975" duration="10007000" />
+      <workItem from="1494290828975" duration="11055000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173671000" />
+    <option name="totallyTimeSpent" value="174719000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -949,14 +943,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/application/controllers/item.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="53" column="47" selection-start-line="53" selection-start-column="47" selection-end-line="53" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/code/application/views/project/admin_view.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -969,8 +955,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/code/application/views/item/admin_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="32" column="79" selection-start-line="32" selection-start-column="79" selection-end-line="32" selection-end-column="79" />
+        <state relative-caret-position="229">
+          <caret line="33" column="40" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/application/controllers/item.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="53" column="29" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
           <folding />
         </state>
       </provider>

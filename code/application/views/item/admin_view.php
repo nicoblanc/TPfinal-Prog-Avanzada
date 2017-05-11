@@ -30,7 +30,8 @@
                                         Descripción:
                                     </dt>
                                     <dd>
-                                        [AGREDAR DESCRIPCION DESDE MODELO ITEMS]
+                                        [AGREDAR DESCRIPCION DESDE MODELO ITEMS
+                                        ]
                                         <?php //echo $project_Name;?>
                                     </dd>
                                     <dt>

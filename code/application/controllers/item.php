@@ -45,8 +45,13 @@ class Item extends CI_Controller
     public function adminItem($pItemCode)
     {
 
+        //!!!!AGREGAR verificacion cundo es un item nuevo revienta !!!!!
+
         $itemLastState = $this->Item_Model->getLastStateByItem($pItemCode);
 
+        var_dump($itemLastState);die();
+
+        empty($itemLastState);
 
         $data = array(
             'itemCode'  => $pItemCode,
