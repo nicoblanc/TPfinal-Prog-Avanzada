@@ -44,7 +44,6 @@ function view_list_items_assigned($pListItem)
     }
 
     return json_encode($itemsToTable);
-
 }
 
 
@@ -132,8 +131,6 @@ function view_list_items_assigned($pListItem)
             <div id="client" class="tab-pane fade">
                 <p>clientes disponibles</p>
             </div>
-
-
         </div>
         </div>
 
@@ -177,7 +174,7 @@ function view_list_items_assigned($pListItem)
 
             //****************************FIN Botones**************************************
 
-
+//###########################################################################################################
 
             // ******************Gestion de tabla listado de items asignados *********************
             var tableItems= new Table();
@@ -205,10 +202,7 @@ function view_list_items_assigned($pListItem)
             });
             //******************FIN Gestion de tabla listado de items*******************
         });
-
-
     </script>
-
 
 <?php
  }//Fin del ELSE
