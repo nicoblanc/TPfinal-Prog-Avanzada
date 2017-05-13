@@ -113,7 +113,7 @@ function view_list_items_assigned($pListItem)
                 </div>
             </div>
             <div id="adminItem" class="tab-pane fade">
-                <p>Items Asignados</p>
+                <p><h3>Items Asignados</h3></p>
                 <form method="POST" action="<?php echo(base_url('/index.php/project/addItems'));?>">
                     <!--<input type="submit" value="Asignar"/>-->
                     <div id="table_Select_Items_assigned"></div>

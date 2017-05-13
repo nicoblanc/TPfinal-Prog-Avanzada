@@ -3,12 +3,12 @@
 require_once APPPATH . 'controllers/base.php';
 
 
-class Item extends CI_Controller
+class Item_Type extends CI_Controller
 {
     public function __construct() {
         parent::__construct();
         $this->base = new Base();
-        $this->load->model('item_model', 'Item_Model');
+        $this->load->model('item_type_model', 'Item_Type_Model');
 
         //session_start();
         //var_dump($_SESSION["user_login"]);die();
@@ -16,27 +16,29 @@ class Item extends CI_Controller
 
     public function render_view($pOutput = null)
     {
-        $this->load->view('item/item_crud_view.php',$pOutput);
+        $this->load->view('item_type/item_type_crud_view.php',$pOutput);
     }
 
     public function show_crud_view()
     {
-        $this->Item_Model->set_db_table_name('item');
+        $this->Item_Type_Model->set_db_table_name('itemtype');
 
-            $this->Item_Model->set_change_columns_name(array(
+        /* $this->Item_Model->set_change_columns_name(array(
                 'itemcode'=>'Código',
                 'itemtype'=>'Tipo',
                 'description'=>'Descripción',
                 'projectcode'=>'Código de Proyecto',
                 'prioriry'=>'Prioridad'
             ));
+        */
 
-        $output = $this->Item_Model->crud(); 
+        $output = $this->Item_Type_Model->crud();
 
         $this->load->view('base/head_view', $output);
         $this->render_view($output);
         $this->load->view('base/footer_view', $output);
     }
+
 
     public function listItems()
     {
@@ -88,4 +90,7 @@ class Item extends CI_Controller
         }
 
     }
+
+
+
 }

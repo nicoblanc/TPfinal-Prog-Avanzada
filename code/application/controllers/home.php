@@ -15,6 +15,10 @@ require_once APPPATH . 'controllers/base.php';
 
 class home extends CI_Controller {
 
+    function index(){
+        $this->tabla();
+    }
+
     function tabla() {
         $base = new Base();
         $data['tabla'] = ''; //colocar los elemetos de la tabla, objeto(ver formato en table.js )

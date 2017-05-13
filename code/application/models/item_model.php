@@ -127,7 +127,17 @@ class Item_Model extends Base_Model
         $query = $this->db->query($sql);
 
         return $query->row();
+    }
 
+
+
+    public function getAllItemState()
+    {
+        $sql ="SELECT * FROM `itemstate`";
+
+        $query = $this->db->query($sql);
+
+        return $query->result();
     }
 
     public function getItemsByHistoryRange($dateFrom, $dateTo)

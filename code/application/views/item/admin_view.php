@@ -54,7 +54,7 @@
             </div>
         </div>
         <div id="itemStatus" class="tab-pane fade">
-            <div>Estado Actual: <strong><?php echo $itemStateDescription;?></strong></div>
+            <div><h3>Estado Actual: <strong><?php echo $itemStateDescription;?></strong></h3></div>
 
             <div class="row">
                 <form method="POST" action="<?php echo(base_url('/index.php/item/changeState').'/'.$itemCode);?> ">

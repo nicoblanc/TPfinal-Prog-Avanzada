@@ -20,6 +20,13 @@ class Project extends CI_Controller
     public function show_crud_view()
     {
         $this->Project_Model->set_db_table_name('project');
+        $this->Project_Model->set_unset_columns_view(array('clientcode'));
+
+        $this->Project_Model->set_change_columns_name(array(
+            'description'=>'Descripción',
+        ));
+
+
         $output = $this->Project_Model->crud();
 
         $this->load->view('base/head_view', $output);
