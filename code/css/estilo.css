@@ -73,6 +73,6 @@ button a {
 
 
 /** OCULTAR ELEMTOS**/
-.dataTables_filter,{
+.dataTables_filter,tfoot{
     display: none;
 }

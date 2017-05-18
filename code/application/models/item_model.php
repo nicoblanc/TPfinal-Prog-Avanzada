@@ -61,7 +61,7 @@ class Item_Model extends Base_Model
                 
                 JOIN `itemstate`ON `itemstate`.`itemstatecode` = `itemhistory`.`itemstate`
                 
-                WHERE `item`.`projectcode`= '$pProjectCode' AND `itemhistory`.`isLastState` = 1;";
+                WHERE `item`.`projectcode`= '$pProjectCode' AND `itemhistory`.`isLastState` = 1 OR `item`.`projectcode`= '';";
 
         $query            =  $this->db->query($sql);
 
@@ -74,8 +74,6 @@ class Item_Model extends Base_Model
             $result->body[] = array_values((array) $element);
         }
 
-
-
         return $result;
     }
 
@@ -83,6 +81,9 @@ class Item_Model extends Base_Model
     public function crud(){
         $this->grocery_crud->set_table($this->db_table_name);
         $this->grocery_crud->unset_columns($this->unset_columns_view);
+
+        $this->grocery_crud->unset_export();
+        $this->grocery_crud->unset_print();
 
         //Renombre columnas
         foreach ($this->change_columns_name as $key => $val)
@@ -92,6 +93,8 @@ class Item_Model extends Base_Model
 
         $this->grocery_crud->field_type('itemtype','dropdown',
             array('1' => 'Nuevo requeriminto', '2' => 'Bug','3' => 'Mejora'));
+
+
         $output = $this->grocery_crud->render();
         return $output;
     }

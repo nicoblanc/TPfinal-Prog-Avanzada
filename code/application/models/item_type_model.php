@@ -26,7 +26,8 @@ class Item_Type_Model extends Base_Model
     public function crud(){
         $this->grocery_crud->set_table($this->db_table_name);
         $this->grocery_crud->unset_columns($this->unset_columns_view);
-
+        $this->grocery_crud->unset_export();
+        $this->grocery_crud->unset_print();
         //Renombre columnas
         foreach ($this->change_columns_name as $key => $val)
         {
