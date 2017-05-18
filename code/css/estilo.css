@@ -53,7 +53,7 @@ button a {
 }
 
 .table-row-selected{
-    background-color: white;
+    background-color: #999;
 }
 
 .login-form-row-container{
@@ -68,5 +68,11 @@ button a {
 /*Tabla de proyectos*/
 
 #tabla_home th {
-    width: 10% !important;
+    width: 0% !important;
+}
+
+
+/** OCULTAR ELEMTOS**/
+.dataTables_filter,{
+    display: none;
 }

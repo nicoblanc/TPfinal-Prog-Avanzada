@@ -49,7 +49,7 @@ class Item extends CI_Controller
     public function adminItem($pItemCode)
     {
         $itemLastState = $this->Item_Model->getLastStateByItem($pItemCode);
-        $itemState     = $this->Item_model->getAllItemState();
+        $itemState     = $this->Item_Model->getAllItemState();
 
 
 
@@ -67,10 +67,6 @@ class Item extends CI_Controller
                'itemSteteCode' => null
            );
        }
-
-
-
-
 
         $this->base->loadView('item/admin_view', $data);
     }

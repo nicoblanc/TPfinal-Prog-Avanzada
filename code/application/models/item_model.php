@@ -44,11 +44,27 @@ class Item_Model extends Base_Model
     }
 
 
-    public function itemsByProject($pProjectCode){
+    //Todos los items de un proyecto.
+    public function itemsByProject($pProjectCode)
+    {
+        //$sql              = "SELECT * FROM `item` WHERE `projectcode`= '$pProjectCode';";
 
-        $sql = "SELECT * FROM `item` WHERE `projectcode`= '$pProjectCode';";
+        $sql = "
+                SELECT 
+                    `item`.`itemcode`,
+                    `item`.`description` as 'itemDescription',
+                    `itemstate`.`description` 
+                    
+                FROM `item` 
+                
+                JOIN `itemhistory`ON `itemhistory`.`itemcode` = `item`.`itemcode`
+                
+                JOIN `itemstate`ON `itemstate`.`itemstatecode` = `itemhistory`.`itemstate`
+                
+                WHERE `item`.`projectcode`= '$pProjectCode' AND `itemhistory`.`isLastState` = 1;";
 
         $query            =  $this->db->query($sql);
+
         $result           =  new stdClass();
         $result->header   =  $this->tableViewHeaders;//Array
         $result->body     =  array();
@@ -57,6 +73,8 @@ class Item_Model extends Base_Model
         {
             $result->body[] = array_values((array) $element);
         }
+
+
 
         return $result;
     }

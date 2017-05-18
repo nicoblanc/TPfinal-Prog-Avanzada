@@ -2,7 +2,7 @@
 <?php $CI = & get_instance(); ?>
 
 <div class="container">
-    <h3>Proyectos</h3>
+    <h3><strong>Proyectos</strong></h3>
     <div class="row">
         <div class="col-md-4">
             <button id="btn1-admin" class="btn btn-default">

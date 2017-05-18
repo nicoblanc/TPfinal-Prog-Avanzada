@@ -56,10 +56,12 @@
         <div id="itemStatus" class="tab-pane fade">
             <div><h3>Estado Actual: <strong><?php echo $itemStateDescription;?></strong></h3></div>
 
-            <div class="row">
+
                 <form method="POST" action="<?php echo(base_url('/index.php/item/changeState').'/'.$itemCode);?> ">
                     <div class="form-group">
+                        <div class="row">
                         <div class="col-md-6">
+                            <label>Asignar estado: </label>
                             <select name="itemState" class="form-control">
                                 <option value="0">Sin Estado</option>
                                 <option value="1">Análisis </option>
@@ -68,8 +70,18 @@
                                 <option value="4">Implementación</option>
                             </select>
                         </div>
+                        <div class="col-md-6">
+                            <label>Asignar a: </label>
+                            <select name="userAssign" class="form-control">
+                                <option value="0">[AGREGAR USUARIO]</option>
+                                <option value="1">[AGREGAR USUARIO] </option>
+                                <option value="2">[AGREGAR USUARIO]</option>
+                            </select>
+                        </div>
+                        </div>
+                        <div class="row">
                         <div class="col-md-2">
-                            <input type="submit" value="Cambiar estado" class=" btn btn-success form-control">
+                            <input type="submit" value="Aplicar" class=" btn btn-success form-control">
                         </div>
                     </div>
 

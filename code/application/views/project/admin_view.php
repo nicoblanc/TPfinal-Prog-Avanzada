@@ -1,5 +1,32 @@
 
 <?php
+
+
+//Crea lista de items asignados al proyecto
+function view_list_items_assigned($pListItem)
+{
+    //var_dump($pListItem->body);
+    $itemsToTable = array();
+
+    foreach ($pListItem->body as $item)
+    {
+
+        $itemAvailable = '<input type="checkbox" name="'.$item[0].'"/>';
+        $itemCode = $item[0];
+        $itemDescription = $item[1];
+
+        $itemState = $item[2];
+
+        $url = base_url("/index.php/item/adminItem").'/'. $item[0];
+        $linkItemAdmin = '<a href="'.$url.'">Administrar »</a>';
+
+        //Agrega elentos al array final
+        array_push($itemsToTable,array($itemAvailable,$itemCode, $itemDescription,$itemState ,$linkItemAdmin));
+    }
+
+    return json_encode($itemsToTable);
+}
+
 //Crea lista de items diponibles
 function view_list_items_unassigned($pListItem)
 {
@@ -19,31 +46,6 @@ function view_list_items_unassigned($pListItem)
 
     return json_encode($itemsToTable);
 
-}
-
-//Crea lista de items asignados al proyecto
-function view_list_items_assigned($pListItem)
-{
-    //var_dump($pListItem->body);
-    $itemsToTable = array();
-
-    foreach ($pListItem->body as $item)
-    {
-
-        $itemAvailable = '<input type="checkbox" name="'.$item[0].'"/>';
-        $itemCode = $item[0];
-        $itemDescription = $item[1];
-
-        $itemState = "[ESTADO DEL ITEM Consulta historica join]";
-
-        $url = base_url("/index.php/item/adminItem").'/'. $item[0];
-        $linkItemAdmin = '<a href="'.$url.'">Administrar »</a>';
-
-        //Agrega elentos al array final
-        array_push($itemsToTable,array($itemAvailable,$itemCode, $itemDescription,$itemState ,$linkItemAdmin));
-    }
-
-    return json_encode($itemsToTable);
 }
 
 
