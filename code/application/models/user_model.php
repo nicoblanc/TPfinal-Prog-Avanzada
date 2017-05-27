@@ -22,4 +22,35 @@ class User_Model extends Base_Model
     }
 
 
+    public function getUser($userCode,$password)
+    {
+        try
+        {
+            $sql = "
+                SELECT * FROM `user`
+                WHERE  `user`.usercode = '$userCode' AND `user`.password = '$password';
+            ";
+            $query = $this->db->query($sql);
+
+            return $query->row();
+        }
+        catch (Exception $e)
+        {
+            return null;
+        }
+
+    }
+
+    public function getNowUserlogin()
+    {
+
+    }
+
+    public function closeSession($pUserCode)
+    {
+
+    }
+
+
+
 }
