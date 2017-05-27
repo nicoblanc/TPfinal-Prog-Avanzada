@@ -50,7 +50,7 @@ class Verificar extends CI_Controller {
             }else{
                 $base = new Base();
                 $data = array();
-                $data['msj'] = "Usuario incorrecto.";
+                $data['msj'] = "Usuario y/o contraseña incorrectos.";
                 $base->loadView('verificar_view', $data);
             }
         }
