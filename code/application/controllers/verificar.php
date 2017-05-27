@@ -41,11 +41,25 @@ class Verificar extends CI_Controller {
     	   $login = $this->verificar_model->verificar($nom, $pass);
             if ($login)
             {
+                $usuario_data = array(
+                    'usercode' => $nom,
+                    'login' => TRUE
+                );
+                $this->session->set_userdata($usuario_data);
                  redirect(base_url().'index.php/home/tabla');
             }else{
                 $base = new Base();
-                $base->loadView('verificar_view', null);
+                $data = array();
+                $data['msj'] = "Usuario incorrecto.";
+                $base->loadView('verificar_view', $data);
             }
         }
+    }
+
+    function CloseSession()
+    {
+        $this->session->sess_destroy();
+        $base = new Base();
+        $base->loadView('verificar_view', $data = array());
     }
 }

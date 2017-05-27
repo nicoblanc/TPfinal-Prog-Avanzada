@@ -15,16 +15,24 @@ require_once APPPATH . 'controllers/base.php';
 
 class home extends CI_Controller {
 
-    function index(){
+    function index()
+    {
         $this->tabla();
     }
 
-    function tabla() {
+    function tabla()
+    {
         $base = new Base();
-        $data['tabla'] = ''; //colocar los elemetos de la tabla, objeto(ver formato en table.js )
+        if (isset($this->session->all_userdata()['usercode']))
+        {
+            $data['tabla'] = ''; //colocar los elemetos de la tabla, objeto(ver formato en table.js )
+            $base->loadView('home/tabla_view', $data);
 
-        //Carga la vista de la tabla con el header y el footer.
-        $base->loadView('home/tabla_view', $data);
+        }else{
+
+            $base->loadView('verificar_view', $data = array());
+        }
+
     }
 
 
