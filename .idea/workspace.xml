@@ -4,9 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/code/assets" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e581499f-9da8-4864-a278-f02909de8b72" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/application/controllers/verificar.php" afterPath="$PROJECT_DIR$/code/application/controllers/verificar.php" />
-    </list>
+    <list default="true" id="e581499f-9da8-4864-a278-f02909de8b72" name="Default" comment="" />
     <ignored path="TPfinal-Prog-Avanzada.git.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -102,7 +100,7 @@
       <file leaf-file-name="verificar.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/code/application/controllers/verificar.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
+            <state relative-caret-position="884">
               <caret line="52" column="66" selection-start-line="52" selection-start-column="66" selection-end-line="52" selection-end-column="66" />
               <folding />
             </state>
@@ -531,16 +529,16 @@
       <workItem from="1495326721720" duration="1638000" />
       <workItem from="1495835205407" duration="1853000" />
       <workItem from="1495862010587" duration="3381000" />
-      <workItem from="1495866268375" duration="5206000" />
+      <workItem from="1495866268375" duration="5450000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="211514000" />
+    <option name="totallyTimeSpent" value="211758000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27155825" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -961,7 +959,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/code/application/controllers/verificar.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
+        <state relative-caret-position="884">
           <caret line="52" column="66" selection-start-line="52" selection-start-column="66" selection-end-line="52" selection-end-column="66" />
           <folding />
         </state>
