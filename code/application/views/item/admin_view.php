@@ -63,11 +63,16 @@
                         <div class="col-md-6">
                             <label>Asignar estado: </label>
                             <select name="itemState" class="form-control">
+                                <?php foreach ($stateList as $data){?>
+                                    <option <?php echo ($itemSteteCode == $data->itemstatecode) ? 'selected':''; ?> value="<?php echo $data->itemstatecode; ?>"><?php echo $data->description; ?></option>
+                                <?php }?>
+                                <!--
                                 <option value="0">Sin Estado</option>
                                 <option value="1">Análisis </option>
                                 <option value="2">Desarrollo</option>
                                 <option value="3">Testing</option>
                                 <option value="4">Implementación</option>
+                                -->
                             </select>
                         </div>
                         <div class="col-md-6">

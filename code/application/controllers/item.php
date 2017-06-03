@@ -49,7 +49,7 @@ class Item extends CI_Controller
     public function adminItem($pItemCode)
     {
         $itemLastState = $this->Item_Model->getLastStateByItem($pItemCode);
-        $itemState     = $this->Item_Model->getAllItemState();
+        $stateList = $this->Item_Model->getAllItemState();
 
 
 
@@ -58,7 +58,8 @@ class Item extends CI_Controller
            $data = array(
                'itemCode'  => $pItemCode,
                'itemStateDescription' => $itemLastState->description,
-               'itemSteteCode' => $itemLastState->itemstate
+               'itemSteteCode' => $itemLastState->itemstate,
+               'stateList' => $stateList
            );
        }else{
            $data = array(
@@ -84,4 +85,6 @@ class Item extends CI_Controller
         }
 
     }
+
+
 }
