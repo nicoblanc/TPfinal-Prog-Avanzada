@@ -55,6 +55,7 @@
 
                 <div class="collapse navbar-collapse" id="navbar-collapse-01">
                     <ul class="nav navbar-nav">
+
                         <!--Dropdown de USsuarios-->
                         <!--<li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> Usuarios<span class="caret"></span></a>
@@ -69,14 +70,17 @@
 
                             </ul>
                         </li>-->
+
                         <!--/Dropdown-->
-                        <li><a href="<?php echo base_url('/index.php/verificar'); ?>"><i class="fa fa-user"></i> Login</a></li>
+                        <!--
+                            <li><a href="<?php echo base_url('/index.php/verificar'); ?>"><i class="fa fa-user"></i> Login</a></li>
+                        -->
+
                         <?php
                         if (isset($CI->session->all_userdata()['usercode']))
                         { ?>
 
                         <li><a href="<?php echo base_url('/index.php/project/listProjects'); ?>"><i class="fa fa-list"></i>&nbsp; &nbsp;Gestion de Proyectos</a></li>
-
 
 
                         <li><a href="<?php echo base_url('/index.php/user/show_crud_view'); ?>"><i class="fa fa-plus"></i>&nbsp; &nbsp; Usuarios</a></li>
@@ -86,23 +90,24 @@
 
                         <li><a href="<?php echo base_url('/index.php/project/show_crud_view'); ?>"><i class="fa fa-plus"></i>&nbsp; &nbsp;CRUD Proyectos</a></li>
 
-
                         <li><a href="<?php echo base_url('/index.php/item/show_crud_view'); ?>"><i class="fa fa-plus"></i>&nbsp; &nbsp;CRUD Items</a></li>
 
                         <li><a href="<?php echo base_url('/index.php/item_type/show_crud_view'); ?>"><i class="fa fa-plus"></i>&nbsp; &nbsp;CRUD Tipos de Items </a></li>
 
-                        <?php  };?>
-
-
                         <?php
-                        if (isset($CI->session->all_userdata()['usercode']))
-                        { ?>
-                         <li style="color: #9d9d9d;"><i class="fa fa-user"></i>
-                         <?php echo($CI->session->all_userdata()['usercode']);  ?>
-                         <a href="<?php echo base_url('/index.php/verificar/CloseSession'); ?>"> SALIR</a>
-                 <?php  };?>
+                        };
+                        ?>
 
-                        </li>
+                        <?php if (isset($CI->session->all_userdata()['usercode'])){ ?>
+                         <li style="color: #9d9d9d;">
+                             <a class="btn btn-default" href="<?php echo base_url('/index.php/verificar/CloseSession'); ?>"><i class="fa fa-user">
+                                 </i> <?php echo($CI->session->all_userdata()['usercode']);  ?> SALIR >>
+                             </a>
+                         </li>
+                        <?php
+                        }
+                        ;?>
+
 
 
                     </ul>
