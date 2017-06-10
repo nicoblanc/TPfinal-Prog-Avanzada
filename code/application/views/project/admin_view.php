@@ -1,35 +1,30 @@
-
 <?php
-
 
 //Crea lista de items asignados al proyecto
 function view_list_items_assigned($pListItem)
 {
-    //var_dump($pListItem->body);
     $itemsToTable = array();
-
     foreach ($pListItem->body as $item)
-    {
-
-        $itemAvailable = '<input type="checkbox" name="'.$item[0].'"/>';
-        $itemCode = $item[0];
-        $itemDescription = $item[1];
-
-        if($item[2] != null)
         {
-            $itemState = $item[2];
-        }else{
-            $itemState = "Sin Estado";
+            $itemAvailable = '<input type="checkbox" name="'.$item[0].'"/>';
+            $itemCode = $item[0];
+            $itemDescription = $item[1];
+
+            if($item[2] != null)
+              {
+                  $itemState = $item[2];
+              }
+            else
+              {
+                  $itemState = "Sin Estado";
+              }
+
+            $url = base_url("/index.php/item/adminItem").'/'. $item[0];
+            $linkItemAdmin = '<a class="btn btn-default" href="'.$url.'"><i class="fa fa-cog"></i> Administrar</a>';
+
+            //Agrega elentos al array final
+            array_push($itemsToTable,array($itemAvailable,$itemCode, $itemDescription,$itemState ,$linkItemAdmin));
         }
-
-
-        $url = base_url("/index.php/item/adminItem").'/'. $item[0];
-        $linkItemAdmin = '<a href="'.$url.'">Administrar »</a>';
-
-        //Agrega elentos al array final
-        array_push($itemsToTable,array($itemAvailable,$itemCode, $itemDescription,$itemState ,$linkItemAdmin));
-    }
-
     return json_encode($itemsToTable);
 }
 
@@ -107,12 +102,14 @@ function view_list_items_unassigned($pListItem)
                                         <dd>
                                             <?php echo $project_Name;?>
                                         </dd>
+                                        <!--
                                         <dt>
                                             Cliente:
                                         </dt>
                                         <dd>
                                             <?php echo $project_client;?>
                                         </dd>
+                                        -->
                                     </dl>
                                 </div>
                             </div>

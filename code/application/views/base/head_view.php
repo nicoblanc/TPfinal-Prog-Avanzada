@@ -25,14 +25,14 @@
     <!--Grocery Crud-->
     <?php
     if (isset($css_files) and isset($js_files))
-    {
-    foreach($css_files as $file): ?>
-    <link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
-    <?php endforeach; ?>
-    <?php foreach($js_files as $file): ?>
-        <script src="<?php echo $file; ?>"></script>
-    <?php endforeach;
-    }?>
+        {
+            foreach($css_files as $file): ?>
+            <link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
+            <?php endforeach; ?>
+            <?php foreach($js_files as $file): ?>
+                <script src="<?php echo $file; ?>"></script>
+            <?php endforeach;
+        }?>
 
     <!-- Corrector -->
     <!--<link rel="stylesheet" href="<?php echo base_url('css/corrector/grocery_crud_corrector.css'  ); ?>">
@@ -40,7 +40,7 @@
 
     <title>Proyectos de Software</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<head>
+</head>
 <body>
     <!--Navbar-->
     <div class="row">
@@ -66,17 +66,18 @@
                              <li><a href="<?php echo base_url('/index.php/item_type/show_crud_view'); ?>"><i class="fa fa-plus"></i>&nbsp; &nbsp;CRUD Tipos de Items </a></li>
                       <?php }; ?>
                     </ul>
-
                     <ul class="nav navbar-nav navbar-right">
-                        <?php if (isset($CI->session->all_userdata()['usercode'])){ ?>
-                         <li style="color: #9d9d9d; margin-right: 26px; margin-top: 10px;">
-                             <div class="btn-group-sm">
-                                 <a class="btn btn-default navbar-right" href="<?php echo base_url('/index.php/verificar/CloseSession'); ?>"><i class="fa fa-user">
-                                     </i> <?php echo($CI->session->all_userdata()['usercode']);  ?> SALIR >>
-                                 </a>
-                             </div>
-                         </li>
-                        <?php };?>
+                        <?php
+                        if (isset($CI->session->all_userdata()['usercode']))
+                            { ?>
+                                <li style="color: #9d9d9d; margin-right: 26px; margin-top: 10px;">
+                                    <div class="btn-group-sm">
+                                        <a class="btn btn-default navbar-right" href="<?php echo base_url('/index.php/verificar/CloseSession'); ?>"><i class="fa fa-user">
+                                            </i> <?php echo($CI->session->all_userdata()['usercode']);  ?> SALIR >>
+                                        </a>
+                                    </div>
+                                </li>
+                     <?php  };?>
                     </ul>
                 </div>
             </nav>

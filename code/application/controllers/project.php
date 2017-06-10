@@ -43,7 +43,7 @@ class Project extends CI_Controller
 
 
     //Administracion del proyecto
-    function adminPeoject($pId="")
+    function adminProject($pId="")
     {
         //obj:
         //--conectara al modelo
