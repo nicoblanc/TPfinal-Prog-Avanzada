@@ -7,25 +7,13 @@
 
             foreach ($ListProjects->body as $key => $element)
             {
-                //var_dump($key);die;
-
-                //$elementAvailable = '<input type="checkbox" name="'.$element[0].'"/>';
-               // $elementCode = $element[0];
-                //$elementDescription = $element[1];
-
-
                 $url = base_url("/index.php/project/adminProject").'/'. $element[0];
                 $linkProjectAdmin = '<a class="btn btn-default" href="'.$url.'"><i class="fa fa-cog"></i> Administrar</a>';
 
                 $ListProjects->body[$key][] = $linkProjectAdmin;
-
             }
             return json_encode($ListProjects);
         }
-
-//var_dump(view_list_project($projects));die;
-
-
 
 ?>
 
@@ -47,11 +35,13 @@
             <div id="tabla_home"></div>
         </div>
     </div>
+    <!--
     <div class="row">
         <div class="col-md-12 ">
            <a href="<?php echo base_url()."index.php/home/tabla" ?>"> « Volver </a>
          </div>
     </div>
+    -->
 </div>
 
 </div>

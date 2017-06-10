@@ -36,7 +36,6 @@ function view_list_items_unassigned($pListItem)
 
     foreach ($pListItem->body as $item)
     {
-
         $itemAvailable = '<input type="checkbox" name="'.$item[0].'"/>';
         $itemCode = $item[0];
         $itemDescription = $item[1];
@@ -44,12 +43,8 @@ function view_list_items_unassigned($pListItem)
         //Agrega elentos al array final
         array_push($itemsToTable,array($itemAvailable,$itemCode, $itemDescription));
     }
-
     return json_encode($itemsToTable);
-
 }
-
-
 ?>
 
 <?php if (isset($msj)){ ?>
@@ -78,7 +73,7 @@ function view_list_items_unassigned($pListItem)
             <li class="active"><a data-toggle="tab" href="#data"><i class="fa fa-eye"></i>&nbsp; &nbsp; Datos</a></li>
             <li><a data-toggle="tab" href="#adminItem"><i class="fa fa-list"></i>&nbspItems</a></li>
             <li><a data-toggle="tab" href="#items"><i class="fa fa-plus"></i>&nbsp; &nbsp;Asignar Items</a></li>
-            <li><a data-toggle="tab" href="#client"><i class="fa fa-plus"></i>&nbsp; &nbsp;Asignar Cliente</a></li>
+            <!--<li><a data-toggle="tab" href="#client"><i class="fa fa-plus"></i>&nbsp; &nbsp;Asignar Cliente</a></li>-->
 
         </ul>
 
@@ -120,9 +115,7 @@ function view_list_items_unassigned($pListItem)
             <div id="adminItem" class="tab-pane fade">
                 <p><h3>Items Asignados</h3></p>
                 <form method="POST" action="<?php echo(base_url('/index.php/project/addItems'));?>">
-                    <!--<input type="submit" value="Asignar"/>-->
                     <div id="table_Select_Items_assigned"></div>
-                    <!--<input type="hidden" name="projectcode" value="<?php echo($project_code);?>">-->
                 </form>
             </div>
             <div id="items" class="tab-pane fade">
@@ -133,9 +126,11 @@ function view_list_items_unassigned($pListItem)
                     <input type="hidden" name="projectcode" value="<?php echo($project_code);?>">
                 </form>
             </div>
+            <!--
             <div id="client" class="tab-pane fade">
                 <p>clientes disponibles</p>
             </div>
+            -->
         </div>
         </div>
 
