@@ -15,7 +15,13 @@ function view_list_items_assigned($pListItem)
         $itemCode = $item[0];
         $itemDescription = $item[1];
 
-        $itemState = $item[2];
+        if($item[2] != null)
+        {
+            $itemState = $item[2];
+        }else{
+            $itemState = "Sin Estado";
+        }
+
 
         $url = base_url("/index.php/item/adminItem").'/'. $item[0];
         $linkItemAdmin = '<a href="'.$url.'">Administrar »</a>';

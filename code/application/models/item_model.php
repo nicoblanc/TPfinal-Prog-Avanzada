@@ -57,9 +57,9 @@ class Item_Model extends Base_Model
                     
                 FROM `item` 
                 
-                JOIN `itemhistory`ON `itemhistory`.`itemcode` = `item`.`itemcode`
+               LEFT JOIN `itemhistory`ON `itemhistory`.`itemcode` = `item`.`itemcode`
                 
-                JOIN `itemstate`ON `itemstate`.`itemstatecode` = `itemhistory`.`itemstate`
+               LEFT JOIN `itemstate`ON `itemstate`.`itemstatecode` = `itemhistory`.`itemstate`
                 
                 WHERE `item`.`projectcode`= '$pProjectCode' AND `itemhistory`.`isLastState` = 1 OR `item`.`projectcode`= '';";
 
@@ -95,8 +95,24 @@ class Item_Model extends Base_Model
             array('1' => 'Nuevo requeriminto', '2' => 'Bug','3' => 'Mejora'));
 
 
+        $this->grocery_crud->callback_insert(array($this,'addItemTypeInHistorical'));
+
+
         $output = $this->grocery_crud->render();
         return $output;
+    }
+
+
+    public function  addItemTypeInHistorical($item)
+    {
+        $sql = "SELECT COUNT(*) AS 'code' FROM `item` ";
+        $query = $this->db->query($sql);
+        $itemCode = $query->row();
+        $newCode = $itemCode->code + 1;
+
+        $this->chageState($newCode, 0);
+
+        return $this->db->insert('item',$item); //Realiza el insert posterior al callback
     }
 
 
