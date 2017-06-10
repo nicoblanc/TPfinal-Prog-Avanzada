@@ -4,6 +4,7 @@
 class Project_Model extends Base_Model
 {
     private $tableViewHeaders = array('Código', 'Proyecto');
+
     function __construct()
     {
         parent::__construct();

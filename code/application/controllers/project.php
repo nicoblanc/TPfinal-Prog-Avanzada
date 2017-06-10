@@ -45,9 +45,7 @@ class Project extends CI_Controller
     //Administracion del proyecto
     function adminProject($pId="")
     {
-        //obj:
-        //--conectara al modelo
-        //--conectar a la vista
+
         if($pId != null and $pId != "")
         {
             $data = [];
@@ -55,7 +53,7 @@ class Project extends CI_Controller
 
             $data['project_code'] = $pId;
             $data['project_Name'] = $project->description;
-            $data['project_client'] = $project->clientcode;
+            //$data['project_client'] = $project->clientcode;
 
             //Listado de items sin asignar
             $data['list_items_unassigned'] = $this->Item_model->listItemsUnassigned();

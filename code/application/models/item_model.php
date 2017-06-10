@@ -167,7 +167,6 @@ class Item_Model extends Base_Model
     }
 
 
-
     public function getAllItemState()
     {
         $sql ="SELECT * FROM `itemstate`";
