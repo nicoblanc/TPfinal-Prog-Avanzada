@@ -168,7 +168,7 @@ function view_list_items_unassigned($pListItem)
 
             //****************************Botones**************************************
             $('#btn1-admin').click(function() {
-                var url = BASE_URL + "index.php/project/adminPeoject/"+ tabla.getSelectedRow();
+                var url = BASE_URL + "index.php/project/adminProject/"+ tabla.getSelectedRow();
                 $(location).attr('href',url);
             });
 
