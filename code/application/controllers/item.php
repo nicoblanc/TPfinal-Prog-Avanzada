@@ -72,6 +72,19 @@ class Item extends CI_Controller
         $this->base->loadView('item/admin_view', $data);
     }
 
+    public function historyStateItem($pItemCode)
+    {
+        $historyState = $this->Item_Model->getHistoryStateByItem($pItemCode);
+
+        $data = array(
+            'idHistory' => $historyState->historyid,
+            'itemCode' => $pItemCode,
+            'itemState' => $historyState->itemstate,
+            'creationDate' =>$historyState->creationdate
+        );
+
+        $this->base->loadview();
+    }
 
 
     public function changeState($pItemCode = null)

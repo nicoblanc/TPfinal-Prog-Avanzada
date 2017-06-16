@@ -166,6 +166,17 @@ class Item_Model extends Base_Model
         return $query->row();
     }
 
+    public function getHistoryStateByItem($itemCode = '')
+    {
+        //Historial de estado de item.
+        $sql = "SELECT * FROM `itemhistory`
+                WHERE `itemcode` = $itemCode";
+
+        $query = $this->db->query($sql);
+
+        return $query->result();
+    }
+
 
     public function getAllItemState()
     {
