@@ -31,7 +31,6 @@ function view_list_items_assigned($pListItem)
 //Crea lista de items diponibles
 function view_list_items_unassigned($pListItem)
 {
-    //var_dump($pListItem->body);
     $itemsToTable = array();
 
     foreach ($pListItem->body as $item)
@@ -70,15 +69,15 @@ function view_list_items_unassigned($pListItem)
 ?>
         <div class="container">
         <ul class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="#data"><i class="fa fa-eye"></i>&nbsp; &nbsp; Datos</a></li>
-            <li><a data-toggle="tab" href="#adminItem"><i class="fa fa-list"></i>&nbspItems</a></li>
+            <li><a data-toggle="tab" href="#data"><i class="fa fa-eye"></i>&nbsp; &nbsp; Datos</a></li>
+            <li class="active"><a data-toggle="tab" href="#adminItem"><i class="fa fa-list"></i>&nbspItems</a></li>
             <li><a data-toggle="tab" href="#items"><i class="fa fa-plus"></i>&nbsp; &nbsp;Asignar Items</a></li>
             <!--<li><a data-toggle="tab" href="#client"><i class="fa fa-plus"></i>&nbsp; &nbsp;Asignar Cliente</a></li>-->
 
         </ul>
 
         <div class="tab-content">
-            <div id="data" class="tab-pane fade in active">
+            <div id="data" class="tab-pane fade">
                 <div class="panel-group">
                     <div class="panel panel-default">
                         <div class="panel-body">
@@ -112,7 +111,7 @@ function view_list_items_unassigned($pListItem)
                     </div>
                 </div>
             </div>
-            <div id="adminItem" class="tab-pane fade">
+            <div id="adminItem" class="tab-pane fade in active">
                 <p><h3>Items Asignados</h3></p>
                 <form method="POST" action="<?php echo(base_url('/index.php/project/addItems'));?>">
                     <div id="table_Select_Items_assigned"></div>

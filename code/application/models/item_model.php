@@ -3,7 +3,7 @@
 
 class Item_Model extends Base_Model
 {
-    private $tableViewHeaders = array('Código de Item', 'Item', 'Proyecto');
+    private $tableViewHeaders = array('Código de Item', 'Item', 'Proyecto','Prioridad');
 
     function __construct()
     {
@@ -17,7 +17,7 @@ class Item_Model extends Base_Model
         try
         {
             //ver que opcion poner
-            $sql = "SELECT * FROM `item` WHERE `projectcode`= ' ';";
+            $sql = "SELECT * FROM `item` WHERE `projectcode`= '0';";
             $query = $this->db->query($sql);
 
             $result = new stdClass();
@@ -47,7 +47,6 @@ class Item_Model extends Base_Model
     //Todos los items de un proyecto.
     public function itemsByProject($pProjectCode)
     {
-        //$sql              = "SELECT * FROM `item` WHERE `projectcode`= '$pProjectCode';";
 
         $sql = "
                 SELECT 
@@ -55,13 +54,15 @@ class Item_Model extends Base_Model
                     `item`.`description` as 'itemDescription',
                     `itemstate`.`description` 
                     
-                FROM `item` 
+               FROM `item` 
                 
                LEFT JOIN `itemhistory`ON `itemhistory`.`itemcode` = `item`.`itemcode`
                 
                LEFT JOIN `itemstate`ON `itemstate`.`itemstatecode` = `itemhistory`.`itemstate`
                 
-                WHERE `item`.`projectcode`= '$pProjectCode' AND `itemhistory`.`isLastState` = 1 OR `item`.`projectcode`= '';";
+              WHERE `item`.`projectcode`= '$pProjectCode' AND `itemhistory`.`isLastState` = 1";
+
+
 
         $query            =  $this->db->query($sql);
 
@@ -70,9 +71,9 @@ class Item_Model extends Base_Model
         $result->body     =  array();
 
         foreach ($query->result() as $element)
-        {
-            $result->body[] = array_values((array) $element);
-        }
+            {
+                $result->body[] = array_values((array) $element);
+            }
 
         return $result;
     }
@@ -91,14 +92,27 @@ class Item_Model extends Base_Model
             $this->grocery_crud->display_as($key, $val);
         }
 
-        $this->grocery_crud->field_type('itemtype','dropdown',
-            array('1' => 'Nuevo requeriminto', '2' => 'Bug','3' => 'Mejora'));
+        $this->grocery_crud->field_type('itemtype','dropdown', array(
+            '1' => 'Nuevo requeriminto',
+            '2' => 'Bug',
+            '3' => 'Mejora'
+        ));
+
+        $this->grocery_crud->field_type('projectcode','dropdown', array('0' => 'Sin Asignar'));
+
+        $this->grocery_crud->field_type('priority','dropdown', array(
+            '0' => 'Sin Asignar',
+            '1' => 'Baja',
+            '2' => 'Media',
+            '3' => 'Alta'
+        ));
 
 
+        //Callback
         $this->grocery_crud->callback_insert(array($this,'addItemTypeInHistorical'));
 
-
         $output = $this->grocery_crud->render();
+
         return $output;
     }
 
@@ -137,17 +151,13 @@ class Item_Model extends Base_Model
 
     public function chageState($itemCode, $itemState)
     {
-        $description = 'prueba';
-        $ReponsibleUserId = '1';
+        $this->changeOldState($itemCode);
 
-        $this->changeOldState($itemCode);//COLOCA ESTADOS ANTIGUO 0 A LAS TUPLAS HISTORICAS DEL ITEM
-
-        $sql = "                         
-               
+        $sql = "                       
                INSERT INTO `itemhistory`(`creationdate`, `itemcode`, `seqstate`, `itemstate`, `description`, `responsibleuser`,`isLastState`) 
-               VALUES (NOW(),$itemCode,1,$itemState,' descripcion de prueba','1',1);";
+               VALUES (NOW(),$itemCode,1,$itemState, '' ,'1',1);               
+               ";
         $query = $this->db->query($sql);
-        //return $query;
     }
 
 

@@ -5,7 +5,8 @@ require_once APPPATH . 'controllers/base.php';
 
 class Project extends CI_Controller
 {
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
         $this->base = new Base();
         $this->load->model('project_model', 'Project_Model');
@@ -43,9 +44,8 @@ class Project extends CI_Controller
 
 
     //Administracion del proyecto
-    function adminProject($pId="")
+    public function adminProject($pId="")
     {
-
         if($pId != null and $pId != "")
         {
             $data = [];
@@ -77,19 +77,19 @@ class Project extends CI_Controller
     }
 
     //permite configurar
-    function addItems()
+    public function addItems()
     {
         foreach ($_POST as $itemcode => $estado)
         {
             if ($estado == "on")
             {
-                $this->Item_model->updateItem($_POST['projectcode'], str_replace("_", " ",$itemcode));
+                $this->Item_model->updateItem($_POST['projectcode'], str_replace("_", "0",$itemcode));
             }
         }
-        redirect(base_url("index.php/project/adminPeoject/".$_POST['projectcode']));
+        redirect(base_url("index.php/project/adminProject/".$_POST['projectcode']));
     }
 
-    function asignCliente(){}//asignacion de cliente
+    function asignCliente(){}//Se ageregara en proxima vercion
 
     function editStatus(){} //Modificar el estado del proyecto
 }

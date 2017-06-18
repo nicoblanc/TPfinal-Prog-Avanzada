@@ -55,8 +55,6 @@
         </div>
         <div id="itemStatus" class="tab-pane fade">
             <div><h3>Estado Actual: <strong><?php echo $itemStateDescription;?></strong></h3></div>
-
-
                 <form method="POST" action="<?php echo(base_url('/index.php/item/changeState').'/'.$itemCode);?> ">
                     <div class="form-group">
                         <div class="row">
@@ -84,15 +82,14 @@
                             </select>
                         </div>
                         </div>
+                        <div class="row"></div></br>
                         <div class="row">
                         <div class="col-md-2">
                             <input type="submit" value="Aplicar" class=" btn btn-success form-control">
                         </div>
                     </div>
-
+                    </div>
                 </form>
-
-        </div>
             </div>
         </div>
         <!--
@@ -108,6 +105,4 @@
             <p>clientes disponibles</p>
         </div>
         -->
-
-    </div>
 </div>

@@ -5,13 +5,11 @@ require_once APPPATH . 'controllers/base.php';
 
 class Item extends CI_Controller
 {
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
         $this->base = new Base();
         $this->load->model('item_model', 'Item_Model');
-
-        //session_start();
-        //var_dump($_SESSION["user_login"]);die();
     }
 
     public function render_view($pOutput = null)

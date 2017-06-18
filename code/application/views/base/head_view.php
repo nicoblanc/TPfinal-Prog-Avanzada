@@ -58,12 +58,12 @@
                         <?php
                         if (isset($CI->session->all_userdata()['usercode']))
                            { ?>
-                             <li><a href="<?php echo base_url('/index.php/project/listProjects'); ?>"><i class="fa fa-list"></i>&nbsp; &nbsp;Gestion de Proyectos</a></li>
-                             <li><a href="<?php echo base_url('/index.php/user/show_crud_view'); ?>"><i class="fa fa-plus"></i>&nbsp; &nbsp; Usuarios</a></li>
-                             <li><a href="<?php echo base_url('/index.php/client/show_crud_view'); ?>"><i class="fa fa-plus"></i>&nbsp; &nbsp; Cliente</a></li>
-                             <li><a href="<?php echo base_url('/index.php/project/show_crud_view'); ?>"><i class="fa fa-plus"></i>&nbsp; &nbsp;CRUD Proyectos</a></li>
-                             <li><a href="<?php echo base_url('/index.php/item/show_crud_view'); ?>"><i class="fa fa-plus"></i>&nbsp; &nbsp;CRUD Items</a></li>
-                             <li><a href="<?php echo base_url('/index.php/item_type/show_crud_view'); ?>"><i class="fa fa-plus"></i>&nbsp; &nbsp;CRUD Tipos de Items </a></li>
+                             <li><a href="<?php echo base_url('/index.php/project/listProjects'); ?>"><i class="fa fa-list"></i>&nbsp; &nbspGestion de Proyectos</a></li>
+                             <li><a href="<?php echo base_url('/index.php/user/show_crud_view'); ?>"><i class="fa fa-plus"></i>&nbsp; &nbspUsuarios</a></li>
+                             <!--<li><a href="<?php echo base_url('/index.php/client/show_crud_view'); ?>"><i class="fa fa-plus"></i>&nbsp; &nbsp; Cliente</a></li>-->
+                             <li><a href="<?php echo base_url('/index.php/project/show_crud_view'); ?>"><i class="fa fa-plus"></i>&nbsp; &nbspCRUD Proyectos</a></li>
+                             <li><a href="<?php echo base_url('/index.php/item/show_crud_view'); ?>"><i class="fa fa-plus"></i>&nbsp; &nbspCRUD Items</a></li>
+                             <li><a href="<?php echo base_url('/index.php/item_type/show_crud_view'); ?>"><i class="fa fa-plus"></i>&nbsp; &nbspCRUD Tipos de Items </a></li>
                       <?php }; ?>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
