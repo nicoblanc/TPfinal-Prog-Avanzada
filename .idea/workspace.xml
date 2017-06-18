@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="225ba01b-a751-49b0-948f-2b85382b5752" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cosa para hacer tp fina_P_A.xlsx" afterPath="$PROJECT_DIR$/Cosa para hacer tp fina_P_A.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/application/controllers/item.php" afterPath="$PROJECT_DIR$/code/application/controllers/item.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/application/controllers/project.php" afterPath="$PROJECT_DIR$/code/application/controllers/project.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/application/models/item_model.php" afterPath="$PROJECT_DIR$/code/application/models/item_model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/application/models/project_model.php" afterPath="$PROJECT_DIR$/code/application/models/project_model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/application/models/user_model.php" afterPath="$PROJECT_DIR$/code/application/models/user_model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/application/views/base/head_view.php" afterPath="$PROJECT_DIR$/code/application/views/base/head_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/application/views/item/admin_view.php" afterPath="$PROJECT_DIR$/code/application/views/item/admin_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/application/views/project/admin_view.php" afterPath="$PROJECT_DIR$/code/application/views/project/admin_view.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/code/application/controllers/usuario-NO.php" afterPath="$PROJECT_DIR$/code/application/controllers/OLD/usuario-NO.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/sql/Backup DB SGP/sgp_02_05_2017.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/sql/Backup DB SGP/sgp_06_05_2017.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/sql/Backup DB SGP/sgp_11_05_2017.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/sql/Backup DB SGP/sgp_29_04_2017.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/sql/Backup DB SGP/sgp_priority_modificado_18-06-2017.sql" afterPath="" />
     </list>
     <ignored path="TPfinal-Prog-Avanzada.git.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -85,7 +79,7 @@
       <file leaf-file-name="head_view.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/code/application/views/base/head_view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
+            <state relative-caret-position="1105">
               <caret line="65" column="144" selection-start-line="65" selection-start-column="144" selection-end-line="65" selection-end-column="144" />
               <folding />
             </state>
@@ -380,15 +374,15 @@
       <workItem from="1497659574310" duration="603000" />
       <workItem from="1497743304217" duration="5415000" />
       <workItem from="1497797764799" duration="2658000" />
-      <workItem from="1497803533539" duration="5971000" />
+      <workItem from="1497803533539" duration="6521000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14647000" />
+    <option name="totallyTimeSpent" value="15197000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2549168" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -618,7 +612,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/code/application/views/base/head_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
+        <state relative-caret-position="1105">
           <caret line="65" column="144" selection-start-line="65" selection-start-column="144" selection-end-line="65" selection-end-column="144" />
           <folding />
         </state>
