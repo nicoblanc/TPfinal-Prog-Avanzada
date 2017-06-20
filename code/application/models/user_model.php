@@ -54,25 +54,8 @@ class User_Model extends Base_Model
             $this->grocery_crud->display_as($key, $val);
         }
 
-       $this->grocery_crud->field_type('profileid','dropdown', array('1' => 'Administrador'));
-
-        /*
-       $this->grocery_crud->field_type('projectcode','dropdown', array('0' => 'Sin Asignar'));
-
-       $this->grocery_crud->field_type('priority','dropdown', array(
-           '0' => 'Sin Asignar',
-           '1' => 'Baja',
-           '2' => 'Media',
-           '3' => 'Alta'
-       ));
-
-       */
-
-        //Callback
-        $this->grocery_crud->callback_insert(array($this,'addItemTypeInHistorical'));
-
+        $this->grocery_crud->field_type('profileid','dropdown', array('1' => 'Administrador'));
         $output = $this->grocery_crud->render();
-
         return $output;
     }
 
