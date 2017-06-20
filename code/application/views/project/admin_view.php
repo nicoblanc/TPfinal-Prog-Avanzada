@@ -73,9 +73,7 @@ function view_list_items_unassigned($pListItem)
             <li class="active"><a data-toggle="tab" href="#adminItem"><i class="fa fa-list"></i>&nbspItems</a></li>
             <li><a data-toggle="tab" href="#items"><i class="fa fa-plus"></i>&nbsp; &nbsp;Asignar Items</a></li>
             <!--<li><a data-toggle="tab" href="#client"><i class="fa fa-plus"></i>&nbsp; &nbsp;Asignar Cliente</a></li>-->
-
         </ul>
-
         <div class="tab-content">
             <div id="data" class="tab-pane fade">
                 <div class="panel-group">
@@ -111,20 +109,40 @@ function view_list_items_unassigned($pListItem)
                     </div>
                 </div>
             </div>
+
+            <!--Items del proyecto-->
             <div id="adminItem" class="tab-pane fade in active">
-                <p><h3>Items Asignados</h3></p>
-                <form method="POST" action="<?php echo(base_url('/index.php/project/addItems'));?>">
-                    <div id="table_Select_Items_assigned"></div>
-                </form>
+                <div class="row">
+                    <div class="col-md-3">
+                        <h3>Items Asignados</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <form method="POST" action="<?php echo(base_url('/index.php/project/addItems'));?>">
+                        <div id="table_Select_Items_assigned"></div>
+                    </form>
+                </div>
             </div>
+            <!--/Items de proyecto-->
+
+            <!--Items sin asignar-->
             <div id="items" class="tab-pane fade">
-                <p>Items Disponibles</p>
-                <form method="POST" action="<?php echo(base_url('/index.php/project/addItems'));?>">
-                    <input class="btn btn-default" type="submit" value="Asignar" />
-                    <div id="table_Select_Items_unassigned"></div>
-                    <input type="hidden" name="projectcode" value="<?php echo($project_code);?>">
-                </form>
+                <div class="row">
+                    <div class="col-md-3">
+                        <p><h3>Items Disponibles</h3></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <form method="POST" action="<?php echo(base_url('/index.php/project/addItems'));?>">
+                        <input class="btn btn-default" type="submit" value="Asignar" />
+                        <div id="table_Select_Items_unassigned"></div>
+                        <input type="hidden" name="projectcode" value="<?php echo($project_code);?>">
+                    </form>
+                </div>
             </div>
+            <!--/Items sin asignar-->
+
+
             <!--
             <div id="client" class="tab-pane fade">
                 <p>clientes disponibles</p>
@@ -133,7 +151,7 @@ function view_list_items_unassigned($pListItem)
         </div>
         </div>
 
-
+    <!-- JS Codigo LOCAL de la vista -->
     <script>
         $(document).ready(function () {
 
@@ -202,7 +220,7 @@ function view_list_items_unassigned($pListItem)
             //******************FIN Gestion de tabla listado de items*******************
         });
     </script>
-
+    <!-- /JS Codigo LOCAL de la vista -->
 <?php
  }//Fin del ELSE
 ?>

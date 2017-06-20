@@ -54,6 +54,8 @@ class User_Model extends Base_Model
             $this->grocery_crud->display_as($key, $val);
         }
 
+        $this->grocery_crud->change_field_type('password', 'password');
+
         $this->grocery_crud->field_type('profileid','dropdown', array('1' => 'Administrador'));
         $output = $this->grocery_crud->render();
         return $output;

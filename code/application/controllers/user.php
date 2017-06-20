@@ -24,8 +24,10 @@ class User extends CI_Controller
     {
         $this->User_Model->set_db_table_name('user');
         $this->User_Model->set_unset_columns_view(['password']);
-        $this->User_Model->set_change_columns_name(
-            ['usercode'=>'Usuario']);
+        $this->User_Model->set_change_columns_name([
+                'usercode'  =>  'Usuario',
+                'Profileid' => 'Perfil'
+            ]);
 
         $output = $this->User_Model->crud();
 
