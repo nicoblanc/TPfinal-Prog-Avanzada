@@ -10,6 +10,8 @@ class Item extends CI_Controller
         parent::__construct();
         $this->base = new Base();
         $this->load->model('item_model', 'Item_Model');
+
+        $this->load->model('user_model', 'User_Model');
     }
 
     public function render_view($pOutput = null)
@@ -46,10 +48,12 @@ class Item extends CI_Controller
 
     public function adminItem($pItemCode)
     {
+        //Dropdown Item
         $itemLastState = $this->Item_Model->getLastStateByItem($pItemCode);
         $stateList = $this->Item_Model->getAllItemState();
 
-
+        //Dropdown Usuario
+        $userList = $this->User_Model->getAllUser();
 
        if (!empty($itemLastState))
        {
@@ -57,13 +61,15 @@ class Item extends CI_Controller
                'itemCode'  => $pItemCode,
                'itemStateDescription' => $itemLastState->description,
                'itemSteteCode' => $itemLastState->itemstate,
-               'stateList' => $stateList
+               'stateList' => $stateList,
+               'userList' => $userList
            );
        }else{
            $data = array(
                'itemCode'  => $pItemCode,
                'itemStateDescription' => "Sin estado",
-               'itemSteteCode' => null
+               'itemSteteCode' => null,
+               'userList' => $userList
            );
        }
 

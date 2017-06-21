@@ -61,8 +61,8 @@
                         <div class="col-md-6">
                             <label>Asignar estado: </label>
                             <select name="itemState" class="form-control">
-                                <?php foreach ($stateList as $data){?>
-                                    <option <?php echo ($itemSteteCode == $data->itemstatecode) ? 'selected':''; ?> value="<?php echo $data->itemstatecode; ?>"><?php echo $data->description; ?></option>
+                                <?php foreach ($stateList as $element){?>
+                                    <option <?php echo ($itemSteteCode == $element->itemstatecode) ? 'selected':''; ?> value="<?php echo $element->itemstatecode; ?>"><?php echo $element->description; ?></option>
                                 <?php }?>
                                 <!--
                                 <option value="0">Sin Estado</option>
@@ -76,9 +76,14 @@
                         <div class="col-md-6">
                             <label>Asignar a: </label>
                             <select name="userAssign" class="form-control">
+                                <?php foreach($userList as $element){?>
+                                <option value="<?php echo $element->usercode ?>"> <?php echo $element->usercode ?> </option>
+                                <?php } ?>
+                                <!--
                                 <option value="0">[AGREGAR USUARIO]</option>
                                 <option value="1">[AGREGAR USUARIO] </option>
                                 <option value="2">[AGREGAR USUARIO]</option>
+                                -->
                             </select>
                         </div>
                         </div>

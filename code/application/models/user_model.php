@@ -41,6 +41,15 @@ class User_Model extends Base_Model
 
     }
 
+    public function getAllUser()
+    {
+        $sql ="SELECT * FROM `user`";
+
+        $query = $this->db->query($sql);
+
+        return $query->result();
+    }
+
     public function crud(){
         $this->grocery_crud->set_table($this->db_table_name);
         $this->grocery_crud->unset_columns($this->unset_columns_view);
