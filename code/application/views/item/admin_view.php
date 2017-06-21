@@ -4,16 +4,18 @@
 
 <div class="container">
     <ul class="nav nav-tabs">
-        <li class="active"><a data-toggle="tab" href="#data"><i class="fa fa-eye"></i>&nbspDatos</a></li>
-        <li><a data-toggle="tab" href="#itemStatus"><i class="fa fa-star"></i>&nbsp Asignar Estado</a></li>
         <!--
-        <li><a data-toggle="tab" href="#items"><i class="fa fa-plus"></i>&nbsp; &nbsp;Asignar Items</a></li>
-        <li><a data-toggle="tab" href="#client"><i class="fa fa-plus"></i>&nbsp; &nbsp;Asignar Cliente</a></li>
+        <li class="active"><a data-toggle="tab" href="#data"><i class="fa fa-eye"></i>&nbspDatos</a></li>
         -->
+      <li><a data-toggle="tab" href="#itemStatus"><i class="fa fa-star"></i>&nbsp Asignar Estado</a></li>
+      <!--
+      <li><a data-toggle="tab" href="#items"><i class="fa fa-plus"></i>&nbsp; &nbsp;Asignar Items</a></li>
+      <li><a data-toggle="tab" href="#client"><i class="fa fa-plus"></i>&nbsp; &nbsp;Asignar Cliente</a></li>
+      -->
     </ul>
 
     <div class="tab-content">
-        <div id="data" class="tab-pane fade in active">
+        <!--<div id="data" class="tab-pane fade in active">
             <div class="panel-group">
                 <div class="panel panel-default">
                     <div class="panel-body">
@@ -53,7 +55,8 @@
                 </div>
             </div>
         </div>
-        <div id="itemStatus" class="tab-pane fade">
+        -->
+        <div id="itemStatus" class="tab-pane fade in active">
             <div><h3>Estado Actual: <strong><?php echo $itemStateDescription;?></strong></h3></div>
                 <form method="POST" action="<?php echo(base_url('/index.php/item/changeState').'/'.$itemCode);?> ">
                     <div class="form-group">

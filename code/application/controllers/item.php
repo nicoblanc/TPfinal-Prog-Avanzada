@@ -76,6 +76,42 @@ class Item extends CI_Controller
         $this->base->loadView('item/admin_view', $data);
     }
 
+
+    public function historyItem($pItemCode)
+    {
+
+        $data = array();
+
+
+        //Dropdown Item
+        /*$itemLastState = $this->Item_Model->getLastStateByItem($pItemCode);
+        $stateList = $this->Item_Model->getAllItemState();
+
+        //Dropdown Usuario
+        $userList = $this->User_Model->getAllUser();
+
+        if (!empty($itemLastState))
+        {
+            $data = array(
+                'itemCode'  => $pItemCode,
+                'itemStateDescription' => $itemLastState->description,
+                'itemSteteCode' => $itemLastState->itemstate,
+                'stateList' => $stateList,
+                'userList' => $userList
+            );
+        }else{
+            $data = array(
+                'itemCode'  => $pItemCode,
+                'itemStateDescription' => "Sin estado",
+                'itemSteteCode' => null,
+                'userList' => $userList
+            );
+        }*/
+
+        $this->base->loadView('item/item_history_view', $data);
+    }
+
+
     public function historyStateItem($pItemCode)
     {
         $historyState = $this->Item_Model->getHistoryStateByItem($pItemCode);
