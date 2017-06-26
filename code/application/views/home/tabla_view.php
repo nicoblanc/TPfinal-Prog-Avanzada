@@ -48,7 +48,7 @@
 
 <header>
     <div class="col-lg-12  text-center">
-        <img src="<?php echo base_url('images/logo.png'); ?>">
+        <img src="<?php echo base_url('images/logo.png'); ?>"  style="border-radius: 7px; ">
         <h3>Sistema Gestor de Proyectos</h3>
     </div>
 </header>

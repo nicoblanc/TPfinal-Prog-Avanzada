@@ -1,4 +1,4 @@
-<?php ?>
+<?php  var_dump($itemHistory);?>
 
 <div class="container">
     <div class="row">

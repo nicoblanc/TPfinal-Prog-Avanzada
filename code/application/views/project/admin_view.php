@@ -20,7 +20,7 @@ function view_list_items_assigned($pListItem)
               }
 
             $url = base_url("/index.php/item/adminItem").'/'. $item[0];
-            $urlHistory = base_url("/index.php/item/historyItem").'/'. $item[0];
+            $urlHistory = base_url("/index.php/item/historyByItem").'/'. $item[0];
             $linkItemAdmin = '
                 <a class="btn btn-default" href="'.$url.'"><i class="fa fa-cog"></i> Administrar</a> 
                 <a class="btn btn-default" href="'.$urlHistory.'"><i class="fa fa-clock-o"></i> Historial</a>

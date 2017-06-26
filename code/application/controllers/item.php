@@ -10,14 +10,15 @@ class Item extends CI_Controller
         parent::__construct();
         $this->base = new Base();
         $this->load->model('item_model', 'Item_Model');
-
         $this->load->model('user_model', 'User_Model');
+        $this->load->model('itemhistory_model', 'ItemHistory_Model');
     }
 
     public function render_view($pOutput = null)
     {
         $this->load->view('item/item_crud_view.php',$pOutput);
     }
+
 
     public function show_crud_view()
     {
@@ -37,6 +38,7 @@ class Item extends CI_Controller
         $this->render_view($output);
         $this->load->view('base/footer_view', $output);
     }
+
 
     public function listItems()
     {
@@ -77,37 +79,10 @@ class Item extends CI_Controller
     }
 
 
-    public function historyItem($pItemCode)
+    public function historyByItem($pItemCode)
     {
-
         $data = array();
-
-
-        //Dropdown Item
-        /*$itemLastState = $this->Item_Model->getLastStateByItem($pItemCode);
-        $stateList = $this->Item_Model->getAllItemState();
-
-        //Dropdown Usuario
-        $userList = $this->User_Model->getAllUser();
-
-        if (!empty($itemLastState))
-        {
-            $data = array(
-                'itemCode'  => $pItemCode,
-                'itemStateDescription' => $itemLastState->description,
-                'itemSteteCode' => $itemLastState->itemstate,
-                'stateList' => $stateList,
-                'userList' => $userList
-            );
-        }else{
-            $data = array(
-                'itemCode'  => $pItemCode,
-                'itemStateDescription' => "Sin estado",
-                'itemSteteCode' => null,
-                'userList' => $userList
-            );
-        }*/
-
+        $data['itemHistory'] = $this->ItemHistory_Model->getItemHistoryByItem($pItemCode);
         $this->base->loadView('item/item_history_view', $data);
     }
 
