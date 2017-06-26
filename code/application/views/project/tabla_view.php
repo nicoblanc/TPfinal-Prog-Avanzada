@@ -19,29 +19,11 @@
 
 <div class="container">
     <h3><strong>Proyectos</strong></h3>
-    <!--
-    <div></div><br>
-
-    <div class="row">
-        <div class="col-md-4">
-            <button id="btn1-admin" class="btn btn-default">
-                <i class="fa fa-cog "></i>&nbsp;&nbsp; Administrar
-            </button>
-        </div>
-    </div>
--->
     <div class="row">
         <div class="col-md-12 ">
             <div id="tabla_home"></div>
         </div>
     </div>
-    <!--
-    <div class="row">
-        <div class="col-md-12 ">
-           <a href="<?php echo base_url()."index.php/home/tabla" ?>"> « Volver </a>
-         </div>
-    </div>
-    -->
 </div>
 
 </div>
@@ -52,23 +34,10 @@ $(document).ready(function () {
     // ******************Gestion de tabla*********************
     var tabla = new Table();
     tabla.setViewId('tabla_home');
-
     var data = <?php echo(view_list_project($projects)); ?>;
-
     tabla.setData(data);
     tabla.init();
-
-
-
-    //Botones
-//    $('#btn1-admin').click(function() {
-//        alert("NO VA MAS");
-//        var url = BASE_URL + "index.php/project/adminProject/"+ tabla.getSelectedRow();
-//        $(location).attr('href',url);
-//    });
 
 });
 </script>
 
-<!--</body>
-</html>-->
